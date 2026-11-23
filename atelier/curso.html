@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="title">Barbero Visagista — Curso online · Walter Molina</title>
+<meta name="description" content="Curso online de visagismo para barberos. Método Walter Molina.">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230b0907'/%3E%3Ccircle cx='32' cy='32' r='28.5' fill='none' stroke='%23c8a45c' stroke-width='2'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='24' fill='%23e6cf9a'%3EWM%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-proto="A · Atelier">
+
+<header class="hdr">
+  <a class="brand" href="curso.html" aria-label="Walter Molina">
+    <span class="seal" aria-hidden="true">WM</span>
+    <span class="brand__name">Walter Molina</span>
+  </a>
+  <nav class="nav" aria-label="Principal" data-i18n-attr="aria-label:a_nav">
+    <a href="curso.html" aria-current="page" data-i18n="nav_curso">Curso</a>
+    <a href="consultoria.html" data-i18n="nav_cons">Consultoría</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:a_lang">
+    <button type="button" data-lang-btn="es">ES</button>
+    <button type="button" data-lang-btn="pt">PT</button>
+    <button type="button" data-lang-btn="en">EN</button>
+  </div>
+  <a class="btn btn--ghost btn--sm hdr__cta" href="#oferta" data-wa="curso" data-i18n="hdr_cta">Inscribirme</a>
+</header>
+
+<div class="rail" aria-hidden="true"></div>
+
+<main>
+
+<!-- ============================================================ HERO -->
+<section class="hero" data-scene data-steps="3" aria-labelledby="h1">
+  <div class="hero__pin">
+    <div class="hero__media">
+      <video data-autoplay autoplay muted playsinline loop preload="metadata" poster="../assets/video/tijera.jpg" aria-hidden="true">
+        <source src="../assets/video/tijera.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <p class="hero__tag" aria-hidden="true" data-i18n="hero_tag">N.º I — Técnica de tijera</p>
+
+    <div class="hero__content">
+      <p class="eyebrow" data-reveal data-i18n="hero_eyebrow">Curso online · Visagismo para barberos</p>
+      <h1 class="h1" id="h1" data-split data-reveal="words" style="--d:.15s" data-i18n="h1">Dejá de copiar cortes. <em>Empezá a proyectarlos.</em></h1>
+      <p class="lead" data-reveal style="--d:.7s" data-i18n="hero_sub">El curso online de visagismo para barberos: aprendé a leer cada rostro y a crear el corte y la barba que le corresponden a cada cliente.</p>
+      <div class="cta-row" data-reveal style="--d:.85s">
+        <a class="btn" href="#oferta" data-wa="curso" data-i18n="cta_in">Quiero entrar al curso</a>
+        <a class="btn btn--ghost" href="#programa" data-i18n="cta_prog">Ver el programa</a>
+      </div>
+      <ul class="trust" data-reveal style="--d:1s">
+        <li data-i18n="trust1"><b>+10 años</b> de oficio</li>
+        <li data-i18n="trust2"><b>100%</b> online</li>
+        <li data-i18n="trust3">Contenido nuevo <b>todos los días</b></li>
+      </ul>
+    </div>
+
+    <p class="scrollcue" aria-hidden="true" data-i18n="cue">Deslizá</p>
+
+    <div class="hero__after" aria-hidden="true">
+      <span class="eyebrow eyebrow--bare" data-i18n="after_eyebrow">El criterio</span>
+      <p data-i18n="after_line">El corte empieza antes de la tijera.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= MANIFIESTO -->
+<section class="say" data-scene aria-label="Manifiesto" data-i18n-attr="aria-label:a_manif">
+  <div class="say__pin">
+    <span class="eyebrow say__mark" data-i18n="manif_eyebrow">Manifiesto</span>
+    <p class="say__txt" data-split data-i18n="manif"><span class="m1">Cualquiera copia una foto. Un visagista lee un rostro, entiende a la persona y proyecta una imagen.</span> <span class="m2">Tu cliente no quiere el corte de la foto. Quiere verse bien él.</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ MÉTODO -->
+<section class="method" id="metodo" data-scene data-steps="4" aria-labelledby="metodo-t">
+  <div class="method__pin">
+    <div class="method__head">
+      <h2 class="eyebrow" id="metodo-t" data-i18n="met_eyebrow">El método</h2>
+      <span class="count" data-i18n="met_count">Cuatro pasos</span>
+    </div>
+
+    <article class="mstep">
+      <div class="mstep__num" aria-hidden="true">I</div>
+      <div class="mstep__img ph"><img src="../assets/img/medicion.jpg" alt="Medición de proporciones sobre el rostro de un cliente" data-i18n-attr="alt:alt_m1" loading="lazy"></div>
+      <div class="mstep__txt">
+        <h3 class="h2" data-i18n="m1_t">Leer</h3>
+        <p class="lead" data-i18n="m1_d">Antes de cortar, se mira. Un análisis facial completo: formato del rostro, tercios y perfil.</p>
+        <ul class="tags"><li data-i18n="m1_a">Formato</li><li data-i18n="m1_b">Tercios</li><li data-i18n="m1_c">Perfil</li></ul>
+      </div>
+    </article>
+
+    <article class="mstep">
+      <div class="mstep__num" aria-hidden="true">II</div>
+      <div class="mstep__img ph"><img src="../assets/img/corte-perfil.jpg" alt="Corte terminado visto de perfil" data-i18n-attr="alt:alt_m2" loading="lazy"></div>
+      <div class="mstep__txt">
+        <h3 class="h2" data-i18n="m2_t">Proyectar</h3>
+        <p class="lead" data-i18n="m2_d">Con la lectura hecha, diseñás el corte: estructura, proporción y equilibrio para ese rostro, no para el de la foto.</p>
+        <ul class="tags"><li data-i18n="m2_a">Estructura</li><li data-i18n="m2_b">Proporción</li><li data-i18n="m2_c">Equilibrio</li></ul>
+      </div>
+    </article>
+
+    <article class="mstep">
+      <div class="mstep__num" aria-hidden="true">III</div>
+      <div class="mstep__img ph">
+        <video data-autoplay muted playsinline loop preload="metadata" poster="../assets/video/lateral.jpg" aria-label="Corte de lateral a tijera sobre peine" data-i18n-attr="aria-label:alt_m3">
+          <source src="../assets/video/lateral.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="mstep__txt">
+        <h3 class="h2" data-i18n="m3_t">Ejecutar</h3>
+        <p class="lead" data-i18n="m3_d">La técnica al servicio del proyecto: tijera, textura y barba para que lo que pensaste quede en la cabeza del cliente.</p>
+        <ul class="tags"><li data-i18n="m3_a">Tijera</li><li data-i18n="m3_b">Textura</li><li data-i18n="m3_c">Barba</li></ul>
+      </div>
+    </article>
+
+    <article class="mstep">
+      <div class="mstep__num" aria-hidden="true">IV</div>
+      <div class="mstep__img ph"><img src="../assets/img/consulta-mesa.jpg" alt="Walter Molina dibujando formatos de rostro en su escritorio" data-i18n-attr="alt:alt_m4" loading="lazy"></div>
+      <div class="mstep__txt">
+        <h3 class="h2" data-i18n="m4_t">Comunicar</h3>
+        <p class="lead" data-i18n="m4_d">La consulta: explicás el proyecto, el cliente lo entiende y tu trabajo pasa a valer más.</p>
+        <ul class="tags"><li data-i18n="m4_a">Consulta</li><li data-i18n="m4_b">Proyecto</li><li data-i18n="m4_c">Valor</li></ul>
+      </div>
+    </article>
+
+    <div class="method__rail" aria-hidden="true">
+      <span data-i18n="m1_t">Leer</span><span data-i18n="m2_t">Proyectar</span><span data-i18n="m3_t">Ejecutar</span><span data-i18n="m4_t">Comunicar</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== PROGRAMA -->
+<section class="sec" id="programa" aria-labelledby="prog-t">
+  <div class="wrap prog-grid">
+    <div class="prog-grid__aside">
+      <span class="eyebrow" data-reveal data-i18n="prog_eyebrow">El programa</span>
+      <h2 class="h2" id="prog-t" data-reveal data-i18n="prog_t">Seis módulos. <em>Un solo criterio.</em></h2>
+      <p class="lead" data-reveal data-i18n="prog_d">Del porqué de cada línea a cómo presentarle el proyecto a tu cliente. En orden y sin relleno.</p>
+      <a class="btn btn--ghost" href="#oferta" data-wa="curso" data-reveal data-i18n="cta_in">Quiero entrar al curso</a>
+    </div>
+    <ol class="prog">
+      <li data-reveal><span class="prog__n" aria-hidden="true">I.</span><h3 class="prog__t" data-i18n="p1_t">Fundamentos del visagismo</h3><p class="prog__d" data-i18n="p1_d">Qué comunica una imagen. Líneas, formas y lo que transmiten.</p></li>
+      <li data-reveal><span class="prog__n" aria-hidden="true">II.</span><h3 class="prog__t" data-i18n="p2_t">Análisis facial</h3><p class="prog__d" data-i18n="p2_d">Formatos de rostro, tercios, perfil y cráneo. Cómo medir antes de cortar.</p></li>
+      <li data-reveal><span class="prog__n" aria-hidden="true">III.</span><h3 class="prog__t" data-i18n="p3_t">Estructura del corte</h3><p class="prog__d" data-i18n="p3_d">Proporción, equilibrio y volumen proyectados para cada rostro.</p></li>
+      <li data-reveal><span class="prog__n" aria-hidden="true">IV.</span><h3 class="prog__t" data-i18n="p4_t">Técnicas de tijera</h3><p class="prog__d" data-i18n="p4_d">Cortar y texturizar al mismo tiempo, crear movimiento, laterales rápidos y precisos.</p></li>
+      <li data-reveal><span class="prog__n" aria-hidden="true">V.</span><h3 class="prog__t" data-i18n="p5_t">Barba con visagismo</h3><p class="prog__d" data-i18n="p5_d">Diseño y armonización de la barba según el rostro.</p></li>
+      <li data-reveal><span class="prog__n" aria-hidden="true">VI.</span><h3 class="prog__t" data-i18n="p6_t">La consulta</h3><p class="prog__d" data-i18n="p6_d">Escucha activa, diagnóstico y cómo presentar y cobrar un proyecto de imagen.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================ GALERÍA / INSTAGRAM -->
+<section class="gal" data-scene aria-labelledby="gal-t">
+  <div class="gal__pin">
+    <div class="gal__track">
+      <div class="gal__intro">
+        <span class="eyebrow">Instagram</span>
+        <p class="gal__stat" data-i18n="gal_stat">8,7 mil</p>
+        <h2 class="h3" id="gal-t" data-i18n="gal_t">seguidores aprendiendo. Contenido educativo, <em>todos los días.</em></h2>
+        <p class="muted" data-i18n="gal_d">Tijera, estructura, barba y visagismo aplicado: así enseña Walter en @curso_barberovisagista.</p>
+      </div>
+
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Técnicas de tijera"><img src="../assets/img/reel-01.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Estructura de un corte proyectado con visagismo"><img src="../assets/img/reel-06.jpg" alt="" loading="lazy"></a>
+      <div class="reel reel--wide ph"><video data-autoplay muted playsinline loop preload="metadata" poster="../assets/video/estructura.jpg" aria-label="Walter Molina explicando la estructura de un corte" data-i18n-attr="aria-label:alt_g1"><source src="../assets/video/estructura.mp4" type="video/mp4"></video></div>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Cortar y texturizar al mismo tiempo"><img src="../assets/img/reel-02.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Cómo crear movimiento en un corte con tijera"><img src="../assets/img/reel-03.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Cómo cortar el lateral de forma rápida y precisa"><img src="../assets/img/reel-11.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Barbero, no cometas este error"><img src="../assets/img/reel-07.jpg" alt="" loading="lazy"></a>
+      <div class="reel reel--wide ph"><video data-autoplay muted playsinline loop preload="metadata" poster="../assets/video/tijera.jpg" aria-label="Técnica de tijera sobre peine" data-i18n-attr="aria-label:alt_g2"><source src="../assets/video/tijera.mp4" type="video/mp4"></video></div>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Tip de oro para barberos"><img src="../assets/img/reel-09.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Tu mejor versión"><img src="../assets/img/reel-05.jpg" alt="" loading="lazy"></a>
+      <a class="reel ph" lang="es" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener" aria-label="Instagram: Consultoría de visagismo online"><img src="../assets/img/reel-08.jpg" alt="" loading="lazy"></a>
+
+      <div class="gal__end">
+        <p class="h3" data-i18n="gal_end">Seguí aprendiendo <em>todos los días.</em></p>
+        <a class="btn btn--ghost" href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener">@curso_barberovisagista</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================== PARA QUIÉN / CAMBIA -->
+<section class="sec sec--tint" aria-labelledby="duo-t">
+  <div class="wrap duo">
+    <div class="duo__col">
+      <span class="eyebrow" data-reveal data-i18n="who_eyebrow">Para quién es</span>
+      <h2 class="h2" id="duo-t" data-reveal data-i18n="who_t">Para barberos que buscan <em>criterio.</em></h2>
+      <ul class="list-n">
+        <li data-reveal><i aria-hidden="true">i.</i><p data-i18n="who1">Barberos que quieren dejar de competir por precio.</p></li>
+        <li data-reveal><i aria-hidden="true">ii.</i><p data-i18n="who2">Los que ya cortan bien, pero quieren criterio para decidir qué corte hacer.</p></li>
+        <li data-reveal><i aria-hidden="true">iii.</i><p data-i18n="who3">Los que quieren ofrecer consulta de imagen y cobrar por ella.</p></li>
+      </ul>
+    </div>
+    <div class="duo__col">
+      <span class="eyebrow" data-reveal data-i18n="chg_eyebrow">Lo que cambia</span>
+      <h2 class="h2" data-reveal data-i18n="chg_t">Del corte al <em>proyecto de imagen.</em></h2>
+      <ul class="list-n">
+        <li data-reveal><i aria-hidden="true">i.</i><p data-i18n="chg1">Sabés qué corte hacer antes de agarrar la tijera.</p></li>
+        <li data-reveal><i aria-hidden="true">ii.</i><p data-i18n="chg2">Explicás tu propuesta y el cliente confía.</p></li>
+        <li data-reveal><i aria-hidden="true">iii.</i><p data-i18n="chg3">Tu trabajo deja de ser un corte y pasa a ser un proyecto de imagen.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== INSTRUCTOR -->
+<section class="sec" id="walter" aria-labelledby="who-t">
+  <div class="wrap who">
+    <div class="who__img" data-view>
+      <img src="../assets/img/walter-full.jpg" alt="Retrato de Walter Molina" data-i18n-attr="alt:alt_walter" loading="lazy">
+    </div>
+    <div class="who__txt">
+      <span class="eyebrow" data-reveal data-i18n="ins_eyebrow">Quién enseña</span>
+      <h2 class="h1" id="who-t" data-split data-reveal="words">Walter <em>Molina</em></h2>
+      <p class="quote" data-reveal data-i18n="ins_q">Soy barbero consultor y visagista hace más de 10 años. Creo visuales únicos y personalizados, y todos los días enseño a otros barberos a hacer lo mismo.</p>
+      <div class="stats" data-reveal>
+        <div><b><span data-count="10">10</span>+</b><span data-i18n="st1">años de oficio</span></div>
+        <div><b data-i18n="st2n">8,7k</b><span data-i18n="st2">seguidores en Instagram</span></div>
+        <div><b data-i18n="st3n">Diario</b><span data-i18n="st3">contenido educativo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= TESTIMONIOS -->
+<section class="sec sec--tint" aria-labelledby="tes-t">
+  <div class="wrap">
+    <div class="sec__head">
+      <span class="eyebrow" data-reveal data-i18n="tes_eyebrow">Testimonios</span>
+      <h2 class="h2" id="tes-t" data-reveal data-i18n="tes_t">Lo que dicen <em>los alumnos.</em></h2>
+      <p class="small" data-reveal data-i18n="tes_note">Espacio reservado para testimonios reales de alumnos del curso.</p>
+    </div>
+    <div class="tgrid">
+      <figure class="tcard" data-reveal><span class="tag-ex" data-i18n="ex">Ejemplo</span><blockquote data-i18n="tes_q">Acá va el testimonio real de un alumno.</blockquote><footer data-i18n="tes_f">Nombre del alumno · Ciudad</footer></figure>
+      <figure class="tcard" data-reveal style="--d:.12s"><span class="tag-ex" data-i18n="ex">Ejemplo</span><blockquote data-i18n="tes_q">Acá va el testimonio real de un alumno.</blockquote><footer data-i18n="tes_f">Nombre del alumno · Ciudad</footer></figure>
+      <figure class="tcard" data-reveal style="--d:.24s"><span class="tag-ex" data-i18n="ex">Ejemplo</span><blockquote data-i18n="tes_q">Acá va el testimonio real de un alumno.</blockquote><footer data-i18n="tes_f">Nombre del alumno · Ciudad</footer></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ OFERTA -->
+<section class="sec" id="oferta" aria-labelledby="of-t">
+  <div class="wrap">
+    <div class="offer" data-reveal>
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 132 132"><defs><path id="ring" d="M66 66m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs><circle cx="66" cy="66" r="65.5"/><circle cx="66" cy="66" r="41"/><text><textPath href="#ring" textLength="320">MÉTODO WALTER MOLINA · VISAGISMO ·</textPath></text></svg>
+        <b>WM</b>
+      </div>
+      <span class="eyebrow eyebrow--bare" data-i18n="of_eyebrow">Inscripciones abiertas</span>
+      <h2 class="h2" id="of-t" data-i18n="of_t">Barbero <em>Visagista</em></h2>
+      <p class="lead" data-i18n="of_sub">Curso online · Método Walter Molina</p>
+      <ul>
+        <li data-i18n="of1">Acceso online a todas las clases en video</li>
+        <li data-i18n="of2">Material de apoyo descargable: fichas de análisis facial</li>
+        <li data-i18n="of3">Actualizaciones del contenido</li>
+        <li data-i18n="of4">Soporte directo por WhatsApp</li>
+      </ul>
+      <p class="offer__note" data-i18n="of_note">Consultá el valor y las formas de pago por WhatsApp.</p>
+      <a class="btn" href="#oferta" data-wa="curso" data-i18n="cta_in">Quiero entrar al curso</a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== FAQ -->
+<section class="sec sec--tint" aria-labelledby="faq-t">
+  <div class="wrap faq-grid">
+    <div class="sec__head" style="margin-bottom:0">
+      <span class="eyebrow" data-reveal data-i18n="faq_eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2" id="faq-t" data-reveal data-i18n="faq_t">Antes de <em>entrar.</em></h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary data-i18n="q1">¿Necesito experiencia previa?</summary><p data-i18n="a1">Necesitás saber cortar lo básico. El curso no reemplaza la práctica: le suma criterio para decidir qué hacer en cada rostro.</p></details>
+      <details><summary data-i18n="q2">¿Cómo accedo?</summary><p data-i18n="a2">Es 100% online. Lo ves desde el celular o la compu, a tu ritmo y las veces que quieras.</p></details>
+      <details><summary data-i18n="q3">¿Sirve si ya corto hace años?</summary><p data-i18n="a3">Sí. El visagismo te da el porqué de cada decisión: dejás de cortar por costumbre y empezás a cortar con un proyecto.</p></details>
+      <details><summary data-i18n="q4">¿En qué idioma es?</summary><p data-i18n="a4">Las clases son en español.</p></details>
+      <details><summary data-i18n="q5">¿Cómo me inscribo?</summary><p data-i18n="a5">Escribime por WhatsApp y te paso el valor, las formas de pago y el acceso.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CIERRE -->
+<section class="fin" aria-labelledby="fin-t">
+  <div class="fin__bg" aria-hidden="true"><img src="../assets/img/tijera.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="eyebrow eyebrow--bare" data-reveal data-i18n="fin_eyebrow">Tu próximo paso</span>
+    <h2 class="h2" id="fin-t" data-split data-reveal="words" data-i18n="fin_t">El próximo cliente que se siente en tu sillón merece un corte <em>pensado para él.</em></h2>
+    <a class="btn" href="#oferta" data-wa="curso" data-reveal data-i18n="cta_in">Quiero entrar al curso</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__in">
+      <div class="ftr__brand">
+        <a class="brand" href="curso.html"><span class="seal" aria-hidden="true">WM</span><span class="brand__name" style="display:inline">Walter Molina</span></a>
+        <p data-i18n="ft_d">Método Walter Molina — visagismo para barberos y consultoría de imagen masculina.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft_pages">Páginas</h4>
+        <ul>
+          <li><a href="curso.html" data-i18n="ft_curso">Curso Barbero Visagista</a></li>
+          <li><a href="consultoria.html" data-i18n="ft_cons">Consultoría online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_contact">Contacto</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/curso_barberovisagista/" target="_blank" rel="noopener">Instagram · @curso_barberovisagista</a></li>
+          <li><a href="#oferta" data-wa="curso">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__legal"><span>© 2026 Walter Molina</span><span data-i18n="ft_legal">Método Walter Molina</span></div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  pt: {
+    title: 'Barbeiro Visagista — Curso online · Walter Molina',
+    a_nav: 'Principal', a_lang: 'Idioma', a_manif: 'Manifesto',
+    nav_curso: 'Curso', nav_cons: 'Consultoria', hdr_cta: 'Quero entrar',
+    hero_tag: 'N.º I — Técnica de tesoura',
+    hero_eyebrow: 'Curso online · Visagismo para barbeiros',
+    h1: 'Pare de copiar cortes. <em>Comece a projetá-los.</em>',
+    hero_sub: 'O curso online de visagismo para barbeiros: aprenda a ler cada rosto e a criar o corte e a barba que cabem a cada cliente.',
+    cta_in: 'Quero entrar no curso', cta_prog: 'Ver o programa',
+    trust1: '<b>+10 anos</b> de ofício', trust2: '<b>100%</b> online', trust3: 'Conteúdo novo <b>todos os dias</b>',
+    cue: 'Role', after_eyebrow: 'O critério', after_line: 'O corte começa antes da tesoura.',
+    manif_eyebrow: 'Manifesto',
+    manif: '<span class="m1">Qualquer um copia uma foto. Um visagista lê um rosto, entende a pessoa e projeta uma imagem.</span> <span class="m2">Seu cliente não quer o corte da foto. Quer ficar bem ele mesmo.</span>',
+    met_eyebrow: 'O método', met_count: 'Quatro passos',
+    alt_m1: 'Medição de proporções no rosto de um cliente', alt_m2: 'Corte finalizado visto de perfil', alt_m3: 'Corte da lateral com tesoura sobre pente', alt_m4: 'Walter Molina desenhando formatos de rosto na mesa',
+    m1_t: 'Ler', m1_d: 'Antes de cortar, se observa. Uma análise facial completa: formato do rosto, terços e perfil.', m1_a: 'Formato', m1_b: 'Terços', m1_c: 'Perfil',
+    m2_t: 'Projetar', m2_d: 'Com a leitura feita, você desenha o corte: estrutura, proporção e equilíbrio para aquele rosto, não para o da foto.', m2_a: 'Estrutura', m2_b: 'Proporção', m2_c: 'Equilíbrio',
+    m3_t: 'Executar', m3_d: 'A técnica a serviço do projeto: tesoura, textura e barba para que o que você pensou fique na cabeça do cliente.', m3_a: 'Tesoura', m3_b: 'Textura', m3_c: 'Barba',
+    m4_t: 'Comunicar', m4_d: 'A consulta: você explica o projeto, o cliente entende e o seu trabalho passa a valer mais.', m4_a: 'Consulta', m4_b: 'Projeto', m4_c: 'Valor',
+    prog_eyebrow: 'O programa', prog_t: 'Seis módulos. <em>Um só critério.</em>',
+    prog_d: 'Do porquê de cada linha a como apresentar o projeto ao seu cliente. Em ordem e sem enrolação.',
+    p1_t: 'Fundamentos do visagismo', p1_d: 'O que uma imagem comunica. Linhas, formas e o que elas transmitem.',
+    p2_t: 'Análise facial', p2_d: 'Formatos de rosto, terços, perfil e crânio. Como medir antes de cortar.',
+    p3_t: 'Estrutura do corte', p3_d: 'Proporção, equilíbrio e volume projetados para cada rosto.',
+    p4_t: 'Técnicas de tesoura', p4_d: 'Cortar e texturizar ao mesmo tempo, criar movimento, laterais rápidas e precisas.',
+    p5_t: 'Barba com visagismo', p5_d: 'Desenho e harmonização da barba de acordo com o rosto.',
+    p6_t: 'A consulta', p6_d: 'Escuta ativa, diagnóstico e como apresentar e cobrar um projeto de imagem.',
+    gal_stat: '8,7 mil', gal_t: 'seguidores aprendendo. Conteúdo educativo, <em>todos os dias.</em>',
+    gal_d: 'Tesoura, estrutura, barba e visagismo aplicado: é assim que o Walter ensina em @curso_barberovisagista.',
+    alt_g1: 'Walter Molina explicando a estrutura de um corte', alt_g2: 'Técnica de tesoura sobre pente',
+    gal_end: 'Continue aprendendo <em>todos os dias.</em>',
+    who_eyebrow: 'Para quem é', who_t: 'Para barbeiros que buscam <em>critério.</em>',
+    who1: 'Barbeiros que querem parar de competir por preço.',
+    who2: 'Quem já corta bem, mas quer critério para decidir qual corte fazer.',
+    who3: 'Quem quer oferecer consulta de imagem e cobrar por ela.',
+    chg_eyebrow: 'O que muda', chg_t: 'Do corte ao <em>projeto de imagem.</em>',
+    chg1: 'Você sabe qual corte fazer antes de pegar a tesoura.',
+    chg2: 'Você explica a sua proposta e o cliente confia.',
+    chg3: 'O seu trabalho deixa de ser um corte e passa a ser um projeto de imagem.',
+    alt_walter: 'Retrato de Walter Molina',
+    ins_eyebrow: 'Quem ensina',
+    ins_q: 'Sou barbeiro consultor e visagista há mais de 10 anos. Crio visuais únicos e personalizados e, todos os dias, ensino outros barbeiros a fazer o mesmo.',
+    st1: 'anos de ofício', st2n: '8,7 mil', st2: 'seguidores no Instagram', st3n: 'Diário', st3: 'conteúdo educativo',
+    tes_eyebrow: 'Depoimentos', tes_t: 'O que dizem <em>os alunos.</em>',
+    tes_note: 'Espaço reservado para depoimentos reais de alunos do curso.',
+    ex: 'Exemplo', tes_q: 'Aqui entra o depoimento real de um aluno.', tes_f: 'Nome do aluno · Cidade',
+    of_eyebrow: 'Inscrições abertas', of_t: 'Barbeiro <em>Visagista</em>', of_sub: 'Curso online · Método Walter Molina',
+    of1: 'Acesso online a todas as aulas em vídeo', of2: 'Material de apoio para baixar: fichas de análise facial',
+    of3: 'Atualizações do conteúdo', of4: 'Suporte direto pelo WhatsApp',
+    of_note: 'Consulte o valor e as formas de pagamento pelo WhatsApp.',
+    faq_eyebrow: 'Perguntas frequentes', faq_t: 'Antes de <em>entrar.</em>',
+    q1: 'Preciso ter experiência?', a1: 'Você precisa saber cortar o básico. O curso não substitui a prática: ele soma critério para decidir o que fazer em cada rosto.',
+    q2: 'Como eu acesso?', a2: 'É 100% online. Você assiste pelo celular ou pelo computador, no seu ritmo e quantas vezes quiser.',
+    q3: 'Serve para quem já corta há anos?', a3: 'Sim. O visagismo dá o porquê de cada decisão: você para de cortar por costume e passa a cortar com um projeto.',
+    q4: 'Em que idioma é?', a4: 'As aulas são em espanhol.',
+    q5: 'Como me inscrevo?', a5: 'Me chame no WhatsApp e eu passo o valor, as formas de pagamento e o acesso.',
+    fin_eyebrow: 'Seu próximo passo',
+    fin_t: 'O próximo cliente que sentar na sua cadeira merece um corte <em>pensado para ele.</em>',
+    ft_d: 'Método Walter Molina — visagismo para barbeiros e consultoria de imagem masculina.',
+    ft_pages: 'Páginas', ft_curso: 'Curso Barbeiro Visagista', ft_cons: 'Consultoria online', ft_contact: 'Contato', ft_legal: 'Método Walter Molina'
+  },
+  en: {
+    title: 'Visagist Barber — Online course · Walter Molina',
+    a_nav: 'Main', a_lang: 'Language', a_manif: 'Manifesto',
+    nav_curso: 'Course', nav_cons: 'Consulting', hdr_cta: 'Enroll',
+    hero_tag: 'No. I — Scissor technique',
+    hero_eyebrow: 'Online course · Visagism for barbers',
+    h1: 'Stop copying haircuts. <em>Start designing them.</em>',
+    hero_sub: 'The online visagism course for barbers: learn to read every face and create the cut and beard that belong to each client.',
+    cta_in: 'I want to join the course', cta_prog: 'See the programme',
+    trust1: '<b>10+ years</b> at the chair', trust2: '<b>100%</b> online', trust3: 'New content <b>every day</b>',
+    cue: 'Scroll', after_eyebrow: 'The judgement', after_line: 'The cut begins before the scissors.',
+    manif_eyebrow: 'Manifesto',
+    manif: '<span class="m1">Anyone can copy a photo. A visagist reads a face, understands the person and designs an image.</span> <span class="m2">Your client doesn’t want the cut from the photo. He wants to look good as himself.</span>',
+    met_eyebrow: 'The method', met_count: 'Four steps',
+    alt_m1: 'Measuring proportions on a client’s face', alt_m2: 'Finished haircut seen in profile', alt_m3: 'Cutting the side with scissors over comb', alt_m4: 'Walter Molina sketching face shapes at his desk',
+    m1_t: 'Read', m1_d: 'Before you cut, you look. A full facial analysis: face shape, thirds and profile.', m1_a: 'Shape', m1_b: 'Thirds', m1_c: 'Profile',
+    m2_t: 'Design', m2_d: 'With the reading done, you design the cut: structure, proportion and balance for that face, not the one in the photo.', m2_a: 'Structure', m2_b: 'Proportion', m2_c: 'Balance',
+    m3_t: 'Execute', m3_d: 'Technique in service of the design: scissors, texture and beard, so what you planned ends up on the client’s head.', m3_a: 'Scissors', m3_b: 'Texture', m3_c: 'Beard',
+    m4_t: 'Communicate', m4_d: 'The consultation: you explain the design, the client understands it, and your work becomes worth more.', m4_a: 'Consultation', m4_b: 'Design', m4_c: 'Value',
+    prog_eyebrow: 'The programme', prog_t: 'Six modules. <em>One way of seeing.</em>',
+    prog_d: 'From the reason behind every line to how you present the design to your client. In order, no filler.',
+    p1_t: 'Foundations of visagism', p1_d: 'What an image communicates. Lines, shapes and what they convey.',
+    p2_t: 'Facial analysis', p2_d: 'Face shapes, thirds, profile and skull. How to measure before you cut.',
+    p3_t: 'Structure of the cut', p3_d: 'Proportion, balance and volume designed for each face.',
+    p4_t: 'Scissor techniques', p4_d: 'Cutting and texturising at once, creating movement, fast and precise sides.',
+    p5_t: 'Beard with visagism', p5_d: 'Designing and harmonising the beard to the face.',
+    p6_t: 'The consultation', p6_d: 'Active listening, diagnosis, and how to present and charge for an image project.',
+    gal_stat: '8.7k', gal_t: 'followers learning. Educational content, <em>every single day.</em>',
+    gal_d: 'Scissors, structure, beard and applied visagism: this is how Walter teaches at @curso_barberovisagista.',
+    alt_g1: 'Walter Molina explaining the structure of a cut', alt_g2: 'Scissor-over-comb technique',
+    gal_end: 'Keep learning <em>every day.</em>',
+    who_eyebrow: 'Who it’s for', who_t: 'For barbers who want <em>judgement.</em>',
+    who1: 'Barbers who want to stop competing on price.',
+    who2: 'Those who already cut well but want a method for deciding which cut to do.',
+    who3: 'Those who want to offer image consultations and charge for them.',
+    chg_eyebrow: 'What changes', chg_t: 'From a haircut to an <em>image project.</em>',
+    chg1: 'You know which cut to do before you pick up the scissors.',
+    chg2: 'You explain your proposal and the client trusts you.',
+    chg3: 'Your work stops being a haircut and becomes an image project.',
+    alt_walter: 'Portrait of Walter Molina',
+    ins_eyebrow: 'Your teacher',
+    ins_q: 'I’ve been a consultant barber and visagist for more than 10 years. I create unique, personalised looks, and every day I teach other barbers to do the same.',
+    st1: 'years at the chair', st2n: '8.7k', st2: 'followers on Instagram', st3n: 'Daily', st3: 'educational content',
+    tes_eyebrow: 'Testimonials', tes_t: 'What <em>students</em> say.',
+    tes_note: 'Space reserved for real testimonials from course students.',
+    ex: 'Example', tes_q: 'A real student testimonial goes here.', tes_f: 'Student name · City',
+    of_eyebrow: 'Enrolment open', of_t: 'Visagist <em>Barber</em>', of_sub: 'Online course · Walter Molina Method',
+    of1: 'Online access to every video lesson', of2: 'Downloadable support material: facial-analysis sheets',
+    of3: 'Content updates', of4: 'Direct support on WhatsApp',
+    of_note: 'Ask for the price and payment options on WhatsApp.',
+    faq_eyebrow: 'Frequently asked', faq_t: 'Before you <em>join.</em>',
+    q1: 'Do I need previous experience?', a1: 'You need to know the basics of cutting. The course doesn’t replace practice: it adds the judgement to decide what to do on each face.',
+    q2: 'How do I access it?', a2: 'It’s 100% online. Watch on your phone or computer, at your own pace, as many times as you like.',
+    q3: 'Is it useful if I’ve been cutting for years?', a3: 'Yes. Visagism gives you the reason behind every decision: you stop cutting out of habit and start cutting with a design.',
+    q4: 'What language is it in?', a4: 'The lessons are in Spanish.',
+    q5: 'How do I enrol?', a5: 'Message me on WhatsApp and I’ll send you the price, payment options and access.',
+    fin_eyebrow: 'Your next step',
+    fin_t: 'The next client who sits in your chair deserves a cut <em>designed for him.</em>',
+    ft_d: 'Walter Molina Method — visagism for barbers and men’s image consulting.',
+    ft_pages: 'Pages', ft_curso: 'Visagist Barber course', ft_cons: 'Online consultation', ft_contact: 'Contact', ft_legal: 'Walter Molina Method'
+  }
+};
+</script>
+<script src="../assets/js/site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

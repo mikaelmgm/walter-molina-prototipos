@@ -516,13 +516,16 @@ em { font-style: italic; }
    CONSULTORÍA · HERO
    ========================================================================= */
 .hero {
-  /* la columna de la foto/video toma el ancho de su propia proporción vertical (9:16 o 3:4): nada se recorta */
+  /* texto + video centrados en el mismo ancho que el header; el video (9:16) va enmarcado,
+     separado del header y del borde de abajo, y no toca los costados de la pantalla */
   --ratio: .5625;
-  --mh: max(460px, calc(100svh - var(--wm-bar, 0px) - var(--hdr)));
-  --mw: min(calc(var(--mh) * var(--ratio)), 46vw);
+  --vgap: clamp(28px, 6vh, 64px);
+  --mh: min(max(440px, calc(100svh - var(--wm-bar, 0px) - var(--hdr) - 2 * var(--vgap))), 760px);
+  --mw: min(calc(var(--mh) * var(--ratio)), 38vw);
+  --side: max(var(--pad), calc((100% - var(--max)) / 2));
   position: relative;
   display: grid;
-  grid-template-columns: max(var(--pad), calc((100% - var(--max)) / 2)) minmax(0, 1fr) var(--mw);
+  grid-template-columns: var(--side) minmax(0, 1fr) var(--mw) var(--side);
   min-height: calc(100svh - var(--wm-bar, 0px));
   padding-top: var(--hdr);
   isolation: isolate;
@@ -555,16 +558,27 @@ em { font-style: italic; }
 .metas li + li { padding-left: 18px; border-left: 1px solid var(--line); }
 .metas .ico { color: var(--accent); margin-top: 1px; }
 
-.hero__media { grid-column: 3; position: relative; min-height: 420px; }
+.hero__media { grid-column: 3; position: relative; display: flex; align-items: center; padding-block: var(--vgap); }
 .hero__fill { display: none; }
-.hero__frame { position: absolute; inset: 0; overflow: hidden; background: #2a1d15; }
+.hero__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  overflow: hidden;
+  background: #2a1d15;
+  /* contorno: un filete cobre separado del video, como un cuadro con paspartú */
+  outline: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset: 12px;
+  box-shadow: 0 34px 70px -34px rgba(0, 0, 0, .75), 0 0 0 1px rgba(255, 236, 214, .06);
+}
 .hero__frame :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* video de presentación ocupando todo el cuadro del hero */
 .hero__player, .hero__player .wmp, .hero__player .wmp__stage, .hero__player .wmp__screen { position: absolute; inset: 0; height: 100%; }
 .hero__player .wmp__screen { aspect-ratio: auto; box-shadow: none; }
 .hero__frame video { filter: var(--img); }
 .hero__frame::after {
-  /* moldura rosada de los cuadros del estudio */
+  /* (moldura interna de antes: reemplazada por el contorno de afuera) */
+  display: none;
   content: "";
   position: absolute;
   inset: clamp(12px, 1.4vw, 20px);
@@ -585,8 +599,8 @@ em { font-style: italic; }
 }
 .hero__side {
   position: absolute;
-  right: calc(100% + 14px);
-  bottom: 0;
+  right: calc(100% + 30px);
+  bottom: var(--vgap);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font: 600 9.5px/1 var(--sans);
@@ -1156,11 +1170,11 @@ html[data-vfmt="b"] .ivid--bottom { grid-template-columns: minmax(0, 1fr) minmax
   .hdr__cta { padding: 0 14px; }
 
   .hero { grid-template-columns: var(--pad) minmax(0, 1fr) var(--pad); min-height: 0; }
-  .hero__media { grid-column: 1 / -1; grid-row: 1; height: clamp(380px, 64svh, 600px); min-height: 0; display: grid; place-items: center; overflow: hidden; background: #2a1d15; }
+  .hero__media { grid-column: 1 / -1; grid-row: 1; height: clamp(380px, 64svh, 600px); min-height: 0; padding-block: 0; display: grid; place-items: center; overflow: hidden; background: #2a1d15; }
   .hero__fill { display: block; position: absolute; inset: 0; }
   .hero__fill img { width: 100%; height: 100%; object-fit: cover; filter: blur(22px) saturate(1.05) brightness(.9); scale: 1.25; }
   .hero__fill::after { content: ""; position: absolute; inset: 0; background: rgba(42, 29, 21, .22); }
-  .hero__frame { position: relative; inset: auto; height: calc(100% - 36px); width: auto; aspect-ratio: var(--ratio); box-shadow: 0 26px 44px -22px rgba(0, 0, 0, .6); }
+  .hero__frame { position: relative; inset: auto; height: calc(100% - 36px); width: auto; aspect-ratio: var(--ratio); box-shadow: 0 26px 44px -22px rgba(0, 0, 0, .6); outline-offset: 7px; }
   .hero__frame::after { inset: 8px; }
   .hero__tag { left: 8px; bottom: 8px; padding: 7px 9px; font-size: 9px; }
   .hero__txt { grid-column: 2; grid-row: 2; padding: 26px 0 0; gap: 30px; }

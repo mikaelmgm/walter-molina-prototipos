@@ -740,8 +740,8 @@ html.reduce-motion .guides { transition: none; }
 .item.is-active::after { transform: scaleX(1); }
 @media (min-width: 861px) {
   /* cada paso ocupa media pantalla: la foto sticky se queda quieta mientras pasan los 4 */
-  .item { min-height: max(180px, calc((100svh - var(--top)) * .42)); align-content: start; }
-  .items { padding-bottom: calc((100svh - var(--top)) * .18); }
+  .item { min-height: max(260px, calc((100svh - var(--top)) * .68)); align-content: start; }
+  .items { padding-bottom: calc((100svh - var(--top)) * .3); }
   .sess__media { top: calc(var(--top) + (100svh - var(--top) - min(700px, calc(100svh - var(--top) - 60px))) / 2); }
 }
 .item__n { font: 200 clamp(38px, 3.8vw, 58px)/.86 var(--serif); font-variant-numeric: lining-nums; color: var(--muted); opacity: .7; transition: color .6s, opacity .6s; }
@@ -1211,7 +1211,7 @@ html[data-vfmt="b"] .ivid--bottom { grid-template-columns: minmax(0, 1fr) minmax
   .sess__count .num { font-size: 46px; color: var(--accent); }
   .sess__now { display: block; font: 400 1.22rem/1.2 var(--serif); color: var(--ink); }
   .items { margin-top: 0; border-top: 0; }
-  .item { grid-template-columns: 56px minmax(0, 1fr); padding: 18px 0 20px; }
+  .item { grid-template-columns: 56px minmax(0, 1fr); padding: 18px 0 20px; min-height: 40svh; align-content: start; }
   .item p { font-size: 14.5px; }
 
   .dos__grid { grid-template-columns: 1fr; gap: 48px; }

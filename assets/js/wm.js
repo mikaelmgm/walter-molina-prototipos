@@ -228,6 +228,10 @@
 
     // un slot puede fijar su formato (p. ej. el hero de la consultoría v2 usa siempre el editado "c")
     var fmt = slot.getAttribute('data-wm-fmt') || P.get('video');
+    // data-wm-start="click": el video espera quieto con un aviso "hacé clic"; el clic lo arranca CON sonido
+    // (los navegadores no dejan reproducir con sonido sin un clic del visitante)
+    var clickStart = slot.getAttribute('data-wm-start') === 'click';
+    var started = !clickStart;
     var V = ASSETS + 'video/';
     var fig = document.createElement('figure');
     fig.className = 'wmp wmp--' + fmt;
@@ -235,7 +239,7 @@
     stage.className = 'wmp__stage';
     var mainScreen = document.createElement('div');
     mainScreen.className = 'wmp__screen wmp__screen--main';
-    var main = videoEl(V + (fmt === 'c' ? 'intercalado.mp4' : 'apresentacao.mp4'), V + 'apresentacao.jpg');
+    var main = videoEl(V + (fmt === 'c' ? 'intercalado.mp4' : 'apresentacao.mp4'), V + (fmt === 'c' ? 'intercalado.jpg' : 'apresentacao.jpg'));
     main.loop = true;
     mainScreen.appendChild(main);
     var cap = document.createElement('div');
@@ -257,6 +261,17 @@
     barEl.className = 'wmp__bar';
     barEl.innerHTML = '<i></i>';
     mainScreen.appendChild(barEl);
+    var startBtn = null;
+    if (clickStart) {
+      startBtn = document.createElement('button');
+      startBtn.type = 'button';
+      startBtn.className = 'wmp__start';
+      startBtn.innerHTML = '<span class="wmp__play" aria-hidden="true"><i></i><i></i>' +
+        '<svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>' +
+        '<span class="wmp__startlbl"></span>';
+      mainScreen.appendChild(startBtn);
+      fig.classList.add('is-waiting');
+    }
     stage.appendChild(mainScreen);
 
     var side = null, sideIdx = 0, clips = ['t1', 't2', 't3', 't4'];
@@ -305,6 +320,10 @@
       btn.setAttribute('aria-pressed', listening ? 'true' : 'false');
       fig.classList.toggle('is-listening', listening);
       [].forEach.call(fig.querySelectorAll('.wmp__tag'), function (el) { el.textContent = t('video_results'); });
+      if (startBtn) {
+        startBtn.querySelector('.wmp__startlbl').textContent = t('video_start');
+        startBtn.setAttribute('aria-label', t('video_start'));
+      }
     }
     function setCues() { loadSubs(FX.lang()).then(function (c) { cues = c; tick(); }); }
     function tick() {
@@ -317,6 +336,7 @@
     }
     function loop() { tick(); raf = requestAnimationFrame(loop); }
     function playAll() {
+      if (!started) return;
       if (reduce && !listening) return;
       safePlay(main); if (side) safePlay(side);
       if (strip) [].forEach.call(strip.querySelectorAll('video'), safePlay);
@@ -336,10 +356,18 @@
       }
       labels();
     }
+    function start() {
+      started = true;
+      fig.classList.remove('is-waiting');
+      listening = false;
+      toggleSound();   // arranca desde el principio, con sonido
+    }
+    if (startBtn) startBtn.addEventListener('click', start);
     btn.addEventListener('click', toggleSound);
-    main.addEventListener('click', toggleSound);
+    main.addEventListener('click', function () { if (started) toggleSound(); else start(); });
     main.addEventListener('ended', function () {
       listening = false; main.muted = true; main.loop = true; main.currentTime = 0;
+      if (clickStart) { started = false; fig.classList.add('is-waiting'); main.pause(); labels(); return; }
       labels(); if (visible) playAll();
     });
     main.addEventListener('play', function () { cancelAnimationFrame(raf); loop(); fig.classList.add('is-playing'); });

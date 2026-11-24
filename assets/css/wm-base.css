@@ -195,3 +195,38 @@ html[data-bamode="scroll"] [data-ba] .ba__handle { pointer-events: none; }
 
 /* sitio publicado (<html data-final>): nunca muestra el probador */
 html[data-final] .wmbar, html[data-final] .wmtab { display: none !important; }
+
+/* ---------------------------------------- video que arranca con un clic */
+.wmp__start {
+  position: absolute; inset: 0; z-index: 3;
+  display: none; flex-direction: column; align-items: center; justify-content: flex-end; gap: 16px;
+  padding: 0 0 16%; border: 0; border-radius: 0; cursor: pointer;   /* abajo: no tapa la cara de Walter */
+  background: linear-gradient(180deg, rgba(20, 14, 10, .05) 30%, rgba(20, 14, 10, .55));
+  color: #fff; font: 600 11px/1.3 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase;
+}
+.wmp.is-waiting .wmp__start { display: flex; }
+.wmp.is-waiting :is(.wmp__sound, .wmp__bar, .wmp__cap) { display: none; }
+.wmp__play {
+  position: relative; display: grid; place-items: center;
+  width: 74px; height: 74px; border-radius: 50%;
+  background: rgba(201, 138, 82, .95); color: #1c1410;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .6);
+  transition: transform .35s ease, background-color .35s ease;
+}
+.wmp__play svg { width: 30px; height: 30px; margin-left: 4px; position: relative; z-index: 1; }
+/* ondas que salen del botón: el "hacé clic acá" */
+.wmp__play i {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1.5px solid rgba(232, 180, 128, .9);
+  animation: wmp-ring 2.2s cubic-bezier(.2, .6, .3, 1) infinite;
+}
+.wmp__play i + i { animation-delay: 1.1s; }
+@keyframes wmp-ring { from { transform: scale(1); opacity: .9; } to { transform: scale(1.9); opacity: 0; } }
+.wmp__start:hover .wmp__play, .wmp__start:focus-visible .wmp__play { transform: scale(1.08); background: #dca06a; }
+.wmp__startlbl { padding: 8px 12px; background: rgba(20, 14, 10, .55); text-shadow: 0 1px 2px rgba(0, 0, 0, .5); }
+@container (max-width: 280px) {
+  .wmp__play { width: 60px; height: 60px; }
+  .wmp__play svg { width: 24px; height: 24px; }
+  .wmp__startlbl { font-size: 9.5px; letter-spacing: .12em; }
+}
+html.reduce-motion .wmp__play i { animation: none; opacity: 0; }

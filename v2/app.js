@@ -2,8 +2,7 @@
  * V2 · Estudio — comportamiento propio (después de site.js y wm.js).
  *  - header: fondo al hacer scroll, menú en celular, sección actual
  *  - la sesión: el ítem activo cambia la foto sticky
- *  - resultados: flechas, contador y barra de la fila horizontal;
- *    en pantallas táctiles la foto se arrastra para pasar y el tirador compara
+ *  - resultados: grilla simple; sólo el tirador de cada antes/después se arrastra
  */
 (function () {
   'use strict';
@@ -58,7 +57,7 @@
   var sess = document.querySelector('.sess');
   if (sess) {
     var items = [].slice.call(sess.querySelectorAll('.item'));
-    var shots = [].slice.call(sess.querySelectorAll('.sess__frame img'));
+    var shots = [].slice.call(sess.querySelectorAll('.sess__frame > *'));   // <img> o .shot (foto + líneas)
     var curEl = sess.querySelector('.sess__cur');
     var nowEl = sess.querySelector('.sess__now');   // título del paso activo (franja sticky del celular)
     var active = -1;
@@ -80,42 +79,6 @@
     document.addEventListener('langchange', showNow);
   }
 
-  /* ------------------------------------------------------------ resultados */
-  var track = document.querySelector('.res__track');
-  if (track) {
-    var cards = [].slice.call(track.querySelectorAll('.bac'));
-    var bar = document.querySelector('.res__bar');
-    var count = document.querySelector('.res__cur');
-    var prev = document.querySelector('.res__nav [data-dir="-1"]');
-    var next = document.querySelector('.res__nav [data-dir="1"]');
-    var stepW = function () { return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; };
-
-    [prev, next].forEach(function (b) {
-      if (!b) return;
-      b.addEventListener('click', function () {
-        track.scrollBy({ left: stepW() * parseInt(b.getAttribute('data-dir'), 10), behavior: reduce ? 'auto' : 'smooth' });
-      });
-    });
-
-    var sync = function () {
-      var max = track.scrollWidth - track.clientWidth;
-      var vis = track.scrollWidth ? track.clientWidth / track.scrollWidth : 1;
-      var p = max > 0 ? track.scrollLeft / max : 0;
-      if (bar) {
-        bar.style.setProperty('--rw', (vis * 100).toFixed(2) + '%');
-        bar.style.setProperty('--rl', (p * (1 - vis) * 100).toFixed(2) + '%');
-      }
-      var i = Math.min(cards.length - 1, Math.round(track.scrollLeft / (stepW() || 1)));
-      if (max > 0 && track.scrollLeft >= max - 4) i = cards.length - 1;
-      if (count) count.textContent = pad2(i + 1);
-      if (prev) prev.disabled = track.scrollLeft <= 4;
-      if (next) next.disabled = max <= 4 || track.scrollLeft >= max - 4;
-    };
-    track.addEventListener('scroll', sync, { passive: true });
-    window.addEventListener('resize', sync);
-    window.addEventListener('load', sync);
-    sync();
-    /* táctil: arrastrar sobre la foto compara / revela (wm.js); la fila avanza con las flechas.
-       En los modos "tocar" y "scroll" la foto no se arrastra, así que el swipe vuelve a pasar de foto (ver CSS). */
-  }
+  /* resultados: los antes/después van uno debajo del otro (sin fila horizontal);
+     el tirador de cada uno lo maneja wm.js */
 })();

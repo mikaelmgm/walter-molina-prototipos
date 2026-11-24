@@ -47,6 +47,8 @@ fs.writeFileSync(path.join(OUT, 'index.html'), html);
 for (const f of ['style.css', 'textos.js', 'app.js']) fs.copyFileSync(path.join(ROOT, 'v2', f), path.join(OUT, 'v2', f));
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 // Netlify: lo que no existe va a la principal (los archivos que sí existen no se tocan)
-fs.writeFileSync(path.join(OUT, '_redirects'), '/*  /  301\n');
+// (las direcciones viejas de los prototipos; lo que existe, como v2/style.css, no se toca)
+const OLD = ['/v1/*', '/v2/*', '/v3/*', '/atelier/*', '/blueprint/*', '/impacto/*', '/anteriores.html'];
+fs.writeFileSync(path.join(OUT, '_redirects'), OLD.map((p) => p + '  /  301').join('\n') + '\n');
 
 console.log('Sitio listo en ' + OUT);

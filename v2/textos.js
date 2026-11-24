@@ -27,7 +27,6 @@
     pq3_d: 'Fallas, poco volumen o un formato que no acompaña tu rostro.',
     pq4_t: 'No sabés qué pedirle al barbero',
     pq4_d: 'Y terminás diciendo “hacé lo que te parezca”.',
-    pq_close: 'Tu mejor imagen no está en la cabeza de otro. Está en <em>tu rostro</em>, en tu vida y en cómo querés que te vean.',
 
     /* la sesión (4 pasos) */
     c_how_lead: 'Una videoconferencia online 1 a 1 conmigo, sin apuro, para entender tu caso y armar tu proyecto de imagen.',
@@ -61,7 +60,6 @@
     pq3_d: 'Falhas, pouco volume ou um formato que não acompanha o seu rosto.',
     pq4_t: 'Você não sabe o que pedir ao barbeiro',
     pq4_d: 'E acaba dizendo “faz o que você achar melhor”.',
-    pq_close: 'A sua melhor imagem não está na cabeça de outra pessoa. Está no <em>seu rosto</em>, na sua vida e em como você quer ser visto.',
 
     c_how_lead: 'Uma videoconferência online 1 a 1 comigo, sem pressa, para entender o seu caso e montar o seu projeto de imagem.',
     v2_sess_lbl: 'Videoconferência',
@@ -92,7 +90,6 @@
     pq3_d: "Patchy spots, little volume or a shape that doesn't suit your face.",
     pq4_t: "You don't know what to ask your barber",
     pq4_d: 'And you end up saying “just do whatever you think”.',
-    pq_close: "Your best image isn't in someone else's head. It's in <em>your face</em>, your life and the way you want to be seen.",
 
     c_how_lead: 'An unhurried one-on-one online video call with me, to understand your case and build your image project.',
     v2_sess_lbl: 'Video call',

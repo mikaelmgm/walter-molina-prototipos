@@ -89,11 +89,13 @@
 
 <!-- ================================================================= CITA -->
 <section class="quote" aria-label="Walter Molina">
+  <div class="quote__ph" data-view aria-hidden="true">
+    <img src="../assets/img/walter-face.jpg" alt="" width="480" height="480" loading="lazy">
+  </div>
   <div class="quote__in">
     <span class="quote__mark" aria-hidden="true" data-reveal>“</span>
     <blockquote class="quote__q" data-reveal style="--d:.1s"><p data-i18n="c_quote">Nunca más vas a tener una <em>segunda</em> oportunidad de causar una buena <em>primera</em> impresión.</p></blockquote>
     <p class="quote__by" data-reveal style="--d:.25s">
-      <img src="../assets/img/walter-face.jpg" alt="" width="44" height="55" loading="lazy">
       <span><b data-i18n="c_quote_by">Walter Molina</b> · <span data-i18n="role_short">Barbero · Consultor visagista</span></span>
     </p>
   </div>
@@ -112,7 +114,6 @@
       <li data-reveal style="--d:.16s"><span class="pq__n" aria-hidden="true">iii.</span><h3 data-i18n="pq3_t">Tu barba no te convence</h3><p data-i18n="pq3_d"></p></li>
       <li data-reveal style="--d:.24s"><span class="pq__n" aria-hidden="true">iv.</span><h3 data-i18n="pq4_t">No sabés qué pedirle al barbero</h3><p data-i18n="pq4_d"></p></li>
     </ul>
-    <p class="pq__close" data-reveal data-i18n="pq_close"></p>
   </div>
 </section>
 
@@ -130,12 +131,20 @@
         <!-- 01 · PENDIENTE: foto de Walter mostrando la foto en la notebook (por ahora: Walter con el boceto) -->
         <img class="is-on" src="../assets/img/walter-boceto.jpg" alt="" loading="lazy" style="--pos:50% 30%">
         <div class="shot shot--lines">
-          <img src="../assets/img/mika-antes.jpg" alt="" loading="lazy">
-          <svg class="guides" viewBox="0 0 272 496" preserveAspectRatio="xMidYMid slice">
-            <path pathLength="1" d="M47 287C38 246 39 201 54 166C71 131 109 114 142 116C178 118 205 140 214 176C222 207 222 245 210 273"/>
-            <path pathLength="1" d="M89 254C88 286 108 318 140 323C172 318 192 286 191 254"/>
-            <path class="g" pathLength="1" d="M89 254H191"/>
-            <circle cx="89" cy="254" r="2.4"/><circle cx="191" cy="254" r="2.4"/><circle cx="140" cy="323" r="2.4"/>
+          <img src="../assets/img/ba2-antes.jpg" alt="" loading="lazy" data-focus="off">
+          <svg class="guides" viewBox="0 0 720 1280" preserveAspectRatio="xMidYMid slice">
+            <!-- contorno y volumen del cabello -->
+            <path pathLength="1" d="M185 750C140 690 112 600 122 505C132 420 165 365 230 335C300 305 380 300 450 325C520 350 562 420 566 500C570 580 560 640 540 680"/>
+            <path pathLength="1" d="M382 318C430 352 478 398 502 470C514 510 518 560 512 610"/>
+            <path pathLength="1" d="M248 352C222 402 214 458 226 520C234 562 246 600 252 640"/>
+            <!-- mandíbula -->
+            <path pathLength="1" d="M252 650C248 724 300 800 380 812C460 800 502 724 497 650"/>
+            <!-- eje y tercios del rostro -->
+            <path class="g" pathLength="1" d="M395 300V840"/>
+            <path class="g" pathLength="1" d="M300 452H490M268 560H516M280 686H502M322 812H440"/>
+            <path class="g" pathLength="1" d="M280 616H496"/>
+            <circle cx="252" cy="650" r="5"/><circle cx="497" cy="650" r="5"/><circle cx="380" cy="812" r="5"/>
+            <circle cx="280" cy="616" r="4"/><circle cx="496" cy="616" r="4"/><circle cx="395" cy="452" r="4"/>
           </svg>
         </div>
         <img src="../assets/img/mika-despues.jpg" alt="" loading="lazy" style="--pos:50% 40%">
@@ -234,7 +243,6 @@
           <div class="ba__before"><img class="ba__img" src="../assets/img/ba1-antes.jpg" alt="Antes" data-i18n-attr="alt:before" loading="lazy"><span class="ba__tag ba__tag--b" data-i18n="before">Antes</span></div>
           <span class="ba__handle" data-i18n-attr="aria-label:drag_hint" aria-label="Deslizá para comparar"></span>
         </div>
-        <figcaption><span class="num">01</span><span data-i18n="ba1">Barba y canas</span></figcaption>
       </figure>
       <figure class="bac" data-reveal style="--k:1">
         <div class="ba" data-ba="50">
@@ -243,7 +251,6 @@
           <div class="ba__before"><img class="ba__img" src="../assets/img/ba2-antes.jpg" alt="Antes" data-i18n-attr="alt:before" loading="lazy"><span class="ba__tag ba__tag--b" data-i18n="before">Antes</span></div>
           <span class="ba__handle" data-i18n-attr="aria-label:drag_hint" aria-label="Deslizá para comparar"></span>
         </div>
-        <figcaption><span class="num">02</span><span data-i18n="ba2">Del largo al corto</span></figcaption>
       </figure>
       <figure class="bac" data-reveal style="--k:2">
         <div class="ba" data-ba="50">
@@ -252,7 +259,6 @@
           <div class="ba__before"><img class="ba__img" src="../assets/img/ba3-antes.jpg" alt="Antes" data-i18n-attr="alt:before" loading="lazy"><span class="ba__tag ba__tag--b" data-i18n="before">Antes</span></div>
           <span class="ba__handle" data-i18n-attr="aria-label:drag_hint" aria-label="Deslizá para comparar"></span>
         </div>
-        <figcaption><span class="num">03</span><span data-i18n="ba3">Barba y degradé</span></figcaption>
       </figure>
       <figure class="bac" data-reveal style="--k:3">
         <div class="ba" data-ba="50">
@@ -261,16 +267,6 @@
           <div class="ba__before"><img class="ba__img" src="../assets/img/ba4-antes.jpg" alt="Antes" data-i18n-attr="alt:before" loading="lazy"><span class="ba__tag ba__tag--b" data-i18n="before">Antes</span></div>
           <span class="ba__handle" data-i18n-attr="aria-label:drag_hint" aria-label="Deslizá para comparar"></span>
         </div>
-        <figcaption><span class="num">04</span><span data-i18n="ba4">Textura y peinado</span></figcaption>
-      </figure>
-      <figure class="bac" data-reveal style="--k:4">
-        <div class="ba" data-ba="50">
-          <img class="ba__img ba__img--after" src="../assets/img/despues.jpg" alt="Corte proyectado con visagismo" data-i18n-attr="alt:ba5" loading="lazy">
-          <span class="ba__tag ba__tag--a" data-i18n="after">Después</span>
-          <div class="ba__before"><img class="ba__img" src="../assets/img/antes.jpg" alt="Antes" data-i18n-attr="alt:before" loading="lazy"><span class="ba__tag ba__tag--b" data-i18n="before">Antes</span></div>
-          <span class="ba__handle" data-i18n-attr="aria-label:drag_hint" aria-label="Deslizá para comparar"></span>
-        </div>
-        <figcaption><span class="num">05</span><span data-i18n="ba5">Corte proyectado con visagismo</span></figcaption>
       </figure>
     </div>
   </div>
@@ -336,7 +332,7 @@
   <div class="wrap about__grid">
     <figure class="about__ph" data-view>
       <div class="about__frame" data-reveal="img">
-        <img src="../assets/img/walter-wood.jpg" alt="Walter Molina" data-i18n-attr="alt:brand" width="1070" height="1120" loading="lazy">
+        <img src="../assets/img/walter-wood-centro.jpg" alt="Walter Molina" data-i18n-attr="alt:brand" width="588" height="1120" loading="lazy" data-focus="off">
       </div>
       <figcaption class="about__cap" aria-hidden="true"><span data-i18n="brand_method">Método Walter Molina</span><span data-i18n="ig_handle">@curso_barberovisagista</span></figcaption>
     </figure>

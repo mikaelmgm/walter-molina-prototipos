@@ -79,6 +79,9 @@
   function initialLang() {
     var q = /[?&]lang=(es|pt|en)\b/.exec(location.search);
     if (q && LANGS.indexOf(q[1]) > -1) return q[1];
+    // <html data-lang-start="pt">: la página empieza siempre en ese idioma (p. ej. waltermolina.pro/br)
+    var forced = root.getAttribute('data-lang-start');
+    if (LANGS.indexOf(forced) > -1) return forced;
     try {
       var s = localStorage.getItem('wm_lang');
       if (LANGS.indexOf(s) > -1) return s;

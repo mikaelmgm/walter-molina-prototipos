@@ -936,7 +936,7 @@ html:not([data-bamode="comparar"]) .res__head .hint { display: none; }
    ========================================================================= */
 .fin { padding: var(--sec) 0; }
 .fin__ph { position: absolute; top: 0; right: 0; bottom: 0; height: 100%; width: auto; aspect-ratio: 4 / 5; max-width: 50%; z-index: -1; overflow: hidden; }
-.fin__ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.fin__ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 74%; } /* Walter a la derecha mirando a la izquierda, con un poco de la MacBook */
 .fin__ph::after {
   content: "";
   position: absolute;
@@ -1214,7 +1214,7 @@ html[data-vfmt="b"] .ivid--bottom { grid-template-columns: minmax(0, 1fr) minmax
   .quote__in > * { max-width: none; }
   .fin { padding-top: 0; }
   .fin__ph { position: relative; top: auto; right: auto; bottom: auto; width: min(76%, 340px); height: auto; max-width: none; aspect-ratio: 4 / 5; margin: 0 0 -76px auto; z-index: 0; }
-  .fin__ph::after { background: linear-gradient(0deg, var(--deep) 3%, rgba(var(--deep-rgb), 0) 48%), linear-gradient(90deg, var(--deep) 0%, rgba(var(--deep-rgb), 0) 38%); }
+  .fin__ph::after { background: linear-gradient(0deg, var(--deep) 14%, rgba(var(--deep-rgb), .6) 30%, rgba(var(--deep-rgb), 0) 58%), linear-gradient(90deg, var(--deep) 0%, rgba(var(--deep-rgb), 0) 38%); }
   .fin__grid { grid-template-columns: 1fr; position: relative; }
 
   .ftr__in { grid-template-columns: 1fr; justify-items: start; }

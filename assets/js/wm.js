@@ -30,7 +30,8 @@
   var PAGE = root.getAttribute('data-page') || 'inicio';
   var reduce = FX.reduce;
   var t = FX.t;
-  try { if (/^[123]$/.test(VERSION)) localStorage.setItem('wm_v', VERSION); } catch (e) { /* sin storage */ }
+  var FINAL = root.hasAttribute('data-final');   // sitio publicado: sin probador
+  try { if (!FINAL && /^[123]$/.test(VERSION)) localStorage.setItem('wm_v', VERSION); } catch (e) { /* sin storage */ }
 
   /* ======================================================= barra del probador */
   var UI = {
@@ -78,6 +79,7 @@
     return '../v' + v + '/' + (page === 'consultoria' ? 'consultoria.html' : 'index.html') + query();
   }
   function syncUrl() {
+    if (FINAL) return;
     try { history.replaceState(null, '', location.pathname + query() + location.hash); } catch (e) { /* file:// */ }
   }
 
@@ -174,8 +176,10 @@
   });
 
   renderBar();
-  document.body.appendChild(bar);
-  document.body.appendChild(tab);
+  if (!FINAL) {
+    document.body.appendChild(bar);
+    document.body.appendChild(tab);
+  }
 
   /* ============================================================ video player */
   var SUBS = {};

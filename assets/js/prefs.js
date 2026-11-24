@@ -22,9 +22,13 @@
     panel: ['1', '0']
   };
   var DEF = { portada: 'video', video: 'c', testimonios: '1', antesdespues: 'comparar', panel: '1' };
+  /* <html data-final>: el sitio publicado. Sin probador: ignora la URL y lo guardado,
+     usa los valores por defecto y no muestra la barra. */
+  var FINAL = root.hasAttribute('data-final');
+  if (FINAL) DEF.panel = '0';
   var stored = {};
-  try { stored = JSON.parse(localStorage.getItem('wm_prefs') || '{}') || {}; } catch (e) { stored = {}; }
-  var q = new URLSearchParams(location.search);
+  if (!FINAL) { try { stored = JSON.parse(localStorage.getItem('wm_prefs') || '{}') || {}; } catch (e) { stored = {}; } }
+  var q = new URLSearchParams(FINAL ? '' : location.search);
   var p = {};
   Object.keys(OPTS).forEach(function (k) {
     var v = q.get(k);
@@ -32,7 +36,7 @@
     if (OPTS[k].indexOf(v) > -1) p[k] = v;
   });
   // lo que vino por URL queda guardado
-  try { localStorage.setItem('wm_prefs', JSON.stringify(p)); } catch (e) { /* sin storage */ }
+  if (!FINAL) { try { localStorage.setItem('wm_prefs', JSON.stringify(p)); } catch (e) { /* sin storage */ } }
 
   function eff(k) {
     if (p[k]) return p[k];
@@ -55,6 +59,7 @@
     get: eff,
     explicit: p,
     set: function (k, v) {
+      if (FINAL) return;
       if (OPTS[k] && OPTS[k].indexOf(v) > -1) p[k] = v;
       try { localStorage.setItem('wm_prefs', JSON.stringify(p)); } catch (e) { /* sin storage */ }
       apply();

@@ -20,3 +20,15 @@ Os 3 estilos anteriores (Atelier, Blueprint, Impacto) continuam em `anteriores.h
 Rodar localmente: `node tools/serve.js` e abrir http://localhost:4173/.
 
 > Protótipos: depoimentos e parte dos textos são exemplos para ajustar com o conteúdo real.
+
+## Site publicado (waltermolina.pro)
+
+O site no ar é **só a consultoria da v2**, em espanhol e português, sem o probador de versões.
+Ele é gerado a partir de `v2/consultoria.html` (+ `v2/style.css`, `v2/textos.js`, `v2/app.js` e `assets/`):
+
+```
+node tools/build-site.mjs dist
+netlify deploy --prod --dir dist --site 945eb9b4-049f-4a10-b266-a3850409af50
+```
+
+Para mudar o site, edite esses arquivos da v2 e gere de novo. Os protótipos (v1, v2, v3, probador) continuam no GitHub Pages.

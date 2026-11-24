@@ -192,3 +192,6 @@ html[data-bamode="scroll"] [data-ba] .ba__handle { pointer-events: none; }
   .wmc__backdrop, .wmc__card, .wmp__cap { transition: none; }
   .wmc__status i { animation: none; }
 }
+
+/* sitio publicado (<html data-final>): nunca muestra el probador */
+html[data-final] .wmbar, html[data-final] .wmtab { display: none !important; }

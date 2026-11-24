@@ -76,13 +76,11 @@
   <div class="hero__media" data-view>
     <span class="hero__side" aria-hidden="true" data-i18n="brand_method">Método Walter Molina</span>
     <div class="hero__fill" aria-hidden="true">
-      <img data-hero-media="video" src="../assets/video/hero-loop.jpg" alt="">
-      <img data-hero-media="imagen" src="../assets/img/walter-hero.jpg" alt="">
+      <img src="../assets/video/apresentacao.jpg" alt="">
     </div>
+    <!-- video de presentación: Walter hablando mientras aparecen los antes y después (formato C, editado) -->
     <div class="hero__frame" data-reveal="img" style="--d:.05s">
-      <video data-hero-media="video" data-autoplay muted loop playsinline preload="metadata" poster="../assets/video/hero-loop.jpg" src="../assets/video/hero-loop.mp4" aria-hidden="true"></video>
-      <img data-hero-media="imagen" src="../assets/img/walter-hero.jpg" alt="Walter Molina" data-i18n-attr="alt:brand" width="1100" height="1458" fetchpriority="high">
-      <span class="hero__tag" data-hero-media="video" data-i18n="video_results">Resultados</span>
+      <div class="hero__player" data-wm-player-slot="top" data-wm-fmt="c"></div>
     </div>
   </div>
 </section>
@@ -360,7 +358,7 @@
       <p class="kicker" data-reveal><span class="kicker__n">07</span><span data-i18n="c_final_kicker">Tu próximo paso</span></p>
       <h2 class="h1" id="fin-t" data-split data-reveal="words" data-i18n="c_final_title">Tu imagen puede comunicar lo que <em>vos</em> deseás al mundo.</h2>
       <p class="lead" data-reveal data-i18n="c_final_text">Escribime y comenzamos tu consultoría online.</p>
-      <a class="btn btn--light" href="#reservar" data-wa="consultoria" data-reveal><span data-i18n="cta_book">Reservar mi horario</span><i class="arr" aria-hidden="true"></i></a>
+      <div class="fin__cta" data-reveal><a class="btn btn--light" href="#reservar" data-wa="consultoria"><span data-i18n="cta_book">Reservar mi horario</span><i class="arr" aria-hidden="true"></i></a></div>
     </div>
     <div class="steps" aria-labelledby="steps-t">
       <div class="steps__t" data-reveal>

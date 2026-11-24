@@ -225,12 +225,15 @@ em { font-style: italic; }
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  transition: background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease);
+  transition: background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease), filter .45s var(--ease);
 }
-.btn:hover { background: var(--btn-h); border-color: var(--btn-h); color: var(--btn-h-ink); }
+/* hover: brilla, no se mueve (nada de "levantar": el botón se escapaba del mouse) */
+.btn { --btn-glow: rgba(214, 160, 98, .55); }
+.btn, .btn:hover, .btn:active { transform: none; translate: none; }
+.btn:hover, .btn:focus-visible { filter: brightness(1.1) saturate(1.05); box-shadow: 0 0 0 1px rgba(255, 226, 180, .35) inset, 0 0 26px -2px var(--btn-glow), 0 0 60px -10px var(--btn-glow); }
 .btn--sm { min-height: 44px; padding: 0 18px; font-size: 11.5px; letter-spacing: .14em; }
 .btn--light { background: var(--deep-ink); border-color: var(--deep-ink); color: #2a1d15; }
-.btn--light:hover { background: var(--deep-accent); border-color: var(--deep-accent); color: #2a1d15; }
+.btn--light { --btn-glow: rgba(239, 214, 170, .45); }
 
 .arr { position: relative; flex: none; width: 22px; height: 1px; background: currentColor; transition: width .45s var(--ease); }
 .arr::after {
@@ -543,7 +546,6 @@ em { font-style: italic; }
   padding: clamp(28px, 6.4vh, 84px) clamp(28px, 4.6vw, 80px) 0 0;
 }
 .hero__top { display: grid; justify-items: start; margin-block: auto; }
-html[data-hero="imagen"] .hero { --ratio: .75; }
 .hero .h1 { margin-bottom: clamp(20px, 3.4vh, 34px); max-width: 11.5em; }
 .hero .lead { max-width: 47ch; }
 .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; margin-top: clamp(24px, 4vh, 40px); }
@@ -557,6 +559,9 @@ html[data-hero="imagen"] .hero { --ratio: .75; }
 .hero__fill { display: none; }
 .hero__frame { position: absolute; inset: 0; overflow: hidden; background: #2a1d15; }
 .hero__frame :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* video de presentación ocupando todo el cuadro del hero */
+.hero__player, .hero__player .wmp, .hero__player .wmp__stage, .hero__player .wmp__screen { position: absolute; inset: 0; height: 100%; }
+.hero__player .wmp__screen { aspect-ratio: auto; box-shadow: none; }
 .hero__frame video { filter: var(--img); }
 .hero__frame::after {
   /* moldura rosada de los cuadros del estudio */
@@ -949,7 +954,7 @@ html:not([data-bamode="comparar"]) .res__head .hint { display: none; }
 .fin__txt, .steps { grid-column: 1; }
 .fin__txt .h1 { font-size: clamp(2.5rem, 5vw, 4.7rem); max-width: 12.5em; }
 .fin__txt .lead { margin-top: 22px; }
-.fin__txt .btn { margin-top: 32px; }
+.fin__cta { margin-top: 32px; }
 .steps { margin-top: clamp(48px, 7vh, 76px); }
 .steps__t { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
 .steps__t .kicker { margin: 0; }
@@ -1151,7 +1156,7 @@ html[data-vfmt="b"] .ivid--bottom { grid-template-columns: minmax(0, 1fr) minmax
   .hdr__cta { padding: 0 14px; }
 
   .hero { grid-template-columns: var(--pad) minmax(0, 1fr) var(--pad); min-height: 0; }
-  .hero__media { grid-column: 1 / -1; grid-row: 1; height: clamp(300px, 50svh, 460px); min-height: 0; display: grid; place-items: center; overflow: hidden; background: #2a1d15; }
+  .hero__media { grid-column: 1 / -1; grid-row: 1; height: clamp(380px, 64svh, 600px); min-height: 0; display: grid; place-items: center; overflow: hidden; background: #2a1d15; }
   .hero__fill { display: block; position: absolute; inset: 0; }
   .hero__fill img { width: 100%; height: 100%; object-fit: cover; filter: blur(22px) saturate(1.05) brightness(.9); scale: 1.25; }
   .hero__fill::after { content: ""; position: absolute; inset: 0; background: rgba(42, 29, 21, .22); }

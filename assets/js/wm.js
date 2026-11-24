@@ -222,7 +222,8 @@
     var slot = document.querySelector('[data-wm-player-slot="' + want + '"]') || slots[0];
     slots.forEach(function (s) { s.innerHTML = ''; });
 
-    var fmt = P.get('video');
+    // un slot puede fijar su formato (p. ej. el hero de la consultoría v2 usa siempre el editado "c")
+    var fmt = slot.getAttribute('data-wm-fmt') || P.get('video');
     var V = ASSETS + 'video/';
     var fig = document.createElement('figure');
     fig.className = 'wmp wmp--' + fmt;

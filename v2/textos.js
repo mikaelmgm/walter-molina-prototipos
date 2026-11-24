@@ -7,7 +7,7 @@
   if (!T) return;
 
   Object.assign(T.es, {
-    v2_menu: 'Menú', v2_prev: 'Anterior', v2_next: 'Siguiente',
+    v2_menu: 'Menú', v2_prev: 'Anterior', v2_next: 'Siguiente', badge_soon: 'En preparación',
 
     /* inicio + pasos de reserva: sin Google Meet ni plazos */
     card1_text: 'Videoconferencia online conmigo, un proyecto estratégico de imagen y una guía personalizada para que tu barbero lo ejecute.',
@@ -46,7 +46,7 @@
   });
 
   Object.assign(T.pt, {
-    v2_menu: 'Menu', v2_prev: 'Anterior', v2_next: 'Próximo',
+    v2_menu: 'Menu', v2_prev: 'Anterior', v2_next: 'Próximo', badge_soon: 'Em preparação',
 
     card1_text: 'Videoconferência online comigo, um projeto estratégico de imagem e um guia personalizado para o seu barbeiro executar.',
     step3_t: 'Nos vemos por videoconferência',

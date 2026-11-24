@@ -9,6 +9,10 @@
   Object.assign(T.es, {
     v2_menu: 'Menú', v2_prev: 'Anterior', v2_next: 'Siguiente',
 
+    /* inicio + pasos de reserva: sin Google Meet ni plazos */
+    card1_text: 'Videoconferencia online conmigo, un proyecto estratégico de imagen y una guía personalizada para que tu barbero lo ejecute.',
+    step3_t: 'Nos vemos por videoconferencia',
+
     /* portada */
     c_lead: 'Una consultoría online conmigo para que sepas exactamente qué corte y qué barba van con vos.',
     c_meta1: 'Videoconferencia online conmigo',
@@ -44,6 +48,9 @@
   Object.assign(T.pt, {
     v2_menu: 'Menu', v2_prev: 'Anterior', v2_next: 'Próximo',
 
+    card1_text: 'Videoconferência online comigo, um projeto estratégico de imagem e um guia personalizado para o seu barbeiro executar.',
+    step3_t: 'Nos vemos por videoconferência',
+
     c_lead: 'Uma consultoria online comigo para você saber exatamente qual corte e qual barba combinam com você.',
     c_meta1: 'Videoconferência online comigo',
     c_meta2: 'Projeto estratégico de imagem',
@@ -73,6 +80,9 @@
 
   Object.assign(T.en, {
     v2_menu: 'Menu', v2_prev: 'Previous', v2_next: 'Next',
+
+    card1_text: 'An online video call with me, a strategic image project and a personal guide for your barber to carry out.',
+    step3_t: 'See you on the video call',
 
     c_lead: 'An online consultation with me, so you know exactly which haircut and beard suit you.',
     c_meta1: 'Online video call with me',

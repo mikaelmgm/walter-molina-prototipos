@@ -29,7 +29,10 @@
   if (reduce) root.classList.add('reduce-motion');
 
   /* ------------------------------------------------------------------ i18n */
-  var LANGS = ['es', 'pt', 'en'];
+  /* <html data-langs="es pt"> limita los idiomas de la página; en ese caso el idioma
+     inicial es siempre español (salvo ?lang= o lo que el visitante eligió antes) */
+  var LIMITED = !!root.getAttribute('data-langs');
+  var LANGS = LIMITED ? root.getAttribute('data-langs').split(/\s+/) : ['es', 'pt', 'en'];
   var HTML_LANG = { es: 'es', pt: 'pt-BR', en: 'en' };
   var WA_NUMBER = '5548991327454';
   var WA_MSG = {
@@ -75,11 +78,12 @@
 
   function initialLang() {
     var q = /[?&]lang=(es|pt|en)\b/.exec(location.search);
-    if (q) return q[1];
+    if (q && LANGS.indexOf(q[1]) > -1) return q[1];
     try {
       var s = localStorage.getItem('wm_lang');
       if (LANGS.indexOf(s) > -1) return s;
     } catch (e) { /* sin storage */ }
+    if (LIMITED) return 'es';
     var n = (navigator.language || 'es').slice(0, 2).toLowerCase();
     return LANGS.indexOf(n) > -1 ? n : 'es';
   }

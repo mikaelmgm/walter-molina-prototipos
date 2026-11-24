@@ -125,7 +125,7 @@
         row(u('vfmt'), seg('set', 'video:a', u('a'), vf === 'a') + seg('set', 'video:b', u('b'), vf === 'b') + seg('set', 'video:c', u('c'), vf === 'c'), u(vf + 'D')) +
         row(u('ba'), Object.keys(BM).map(function (m) { return seg('set', 'antesdespues:' + m, u('ba' + BM[m]), bm === m); }).join(''), u('ba' + BM[bm] + 'D')) +
         row(u('dep'), seg('set', 'testimonios:1', u('depS'), dep === '1') + seg('set', 'testimonios:0', u('depH'), dep === '0')) +
-        row(u('lang'), ['es', 'pt', 'en'].map(function (l) { return seg('lang', l, l.toUpperCase(), l === lang); }).join('')) +
+        row(u('lang'), (root.getAttribute('data-langs') || 'es pt en').split(/\s+/).map(function (l) { return seg('lang', l, l.toUpperCase(), l === lang); }).join('')) +
         '<div class="wmbar__actions"><button type="button" class="wmbar__copy">' + u('copy') + '</button>' +
         '<button type="button" class="wmbar__reset">' + u('reset') + '</button></div>' +
       '</div>';

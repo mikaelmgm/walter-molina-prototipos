@@ -42,6 +42,16 @@
       es: 'Hola Walter, quiero saber más sobre el curso Barbero Visagista.',
       pt: 'Olá Walter, quero saber mais sobre o curso Barbeiro Visagista.',
       en: "Hi Walter, I'd like to know more about the Visagist Barber course."
+    },
+    'curso-pronto': {
+      es: 'Hola Walter, quiero que me avises cuando abra el curso Barbero Visagista.',
+      pt: 'Olá Walter, quero ser avisado quando abrir o curso Barbeiro Visagista.',
+      en: "Hi Walter, please let me know when the Visagist Barber course opens."
+    },
+    soporte: {
+      es: 'Hola Walter, tengo una consulta.',
+      pt: 'Olá Walter, tenho uma dúvida.',
+      en: 'Hi Walter, I have a question.'
     }
   };
 
@@ -59,7 +69,6 @@
   });
 
   function pick(lang, key, fallback) {
-    if (lang === 'es') return fallback;
     var d = dict[lang];
     return d && d[key] != null ? d[key] : fallback;
   }
@@ -76,6 +85,11 @@
   }
 
   var current = 'es';
+
+  function waHref(kind, lang) {
+    var msg = (WA_MSG[kind] || WA_MSG.consultoria)[lang || current];
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+  }
 
   function setLang(lang, silent) {
     if (LANGS.indexOf(lang) < 0) lang = 'es';
@@ -95,9 +109,7 @@
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     [].forEach.call(document.querySelectorAll('[data-wa]'), function (a) {
-      var kind = a.getAttribute('data-wa') || 'consultoria';
-      var msg = (WA_MSG[kind] || WA_MSG.consultoria)[lang];
-      a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+      a.href = waHref(a.getAttribute('data-wa'), lang);
       a.target = '_blank';
       a.rel = 'noopener';
     });
@@ -251,7 +263,7 @@
   var proto = document.body.getAttribute('data-proto');
   if (proto) {
     var chip = document.createElement('a');
-    chip.href = '../index.html';
+    chip.href = '../anteriores.html';
     chip.textContent = '◂ ' + proto;
     chip.setAttribute('aria-label', 'Volver a la lista de prototipos');
     // pestaña lateral: no pisa ni el header ni las barras fijas de abajo en celular
@@ -271,7 +283,9 @@
     update: update,
     reduce: reduce,
     lang: function () { return current; },
-    setLang: setLang
+    setLang: setLang,
+    waHref: waHref,
+    t: function (key) { var d = dict[current] || {}; var e = dict.es || {}; return d[key] != null ? d[key] : (e[key] != null ? e[key] : ''); }
   };
 
   setLang(initialLang(), true);

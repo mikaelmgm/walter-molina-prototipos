@@ -1,11 +1,22 @@
 # Walter Molina — protótipos de site
 
-Três estilos de landing page (curso online + consultoria de visagismo), em ES / PT / EN.
+Site de consultoria de visagismo online (com o curso "em breve"), em ES / PT / EN.
 
-- **A · Atelier** — noir & ouro, editorial de luxo
-- **B · Blueprint** — técnico, geometria do rosto
-- **C · Impacto** — bold, alto contraste
+## Versões novas (rodada 2)
+Cada versão tem duas páginas: **entrada** (`index.html`, estilo link-na-bio com o vídeo de apresentação) e **consultoria** (`consultoria.html`, a landing principal).
 
-Abra `index.html` para ver os 6 protótipos. Para rodar localmente: `node tools/serve.js` e acesse http://localhost:4173/.
+- **v1 · Atelier** — evolução do Atelier que ele gostou: café, cobre, ripas de madeira
+- **v2 · Estudio** — clara, luz do escritório, fotografia
+- **v3 · Proporción** — proporção áurea 1,618, fios que se desenham
 
-> Protótipos: programa do curso, depoimentos e parte dos textos são exemplos para ajustar com o conteúdo real.
+A barra no topo de cada página (o "probador") troca versão, página, tema claro/escuro, capa com vídeo ou só imagem, formato do vídeo (A presentação primeiro · B ao mesmo tempo · C editado intercalado), depoimentos e idioma — e copia um link já configurado.
+Parâmetros de URL: `?v=2&pagina=consultoria&tema=claro&portada=imagen&video=b&testimonios=0&lang=pt` (`v` e `pagina` só na raiz).
+
+Peças compartilhadas: `assets/js/content.js` (textos), `assets/js/prefs.js`, `assets/js/wm.js`, `assets/css/wm-base.css`, `assets/subs/` (legendas do vídeo).
+
+## Rodada 1
+Os 3 estilos anteriores (Atelier, Blueprint, Impacto) continuam em `anteriores.html`.
+
+Rodar localmente: `node tools/serve.js` e abrir http://localhost:4173/.
+
+> Protótipos: depoimentos e parte dos textos são exemplos para ajustar com o conteúdo real.

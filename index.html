@@ -3,221 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="title">Walter Molina — Prototipos de sitio</title>
+<title>Walter Molina — Barbero y consultor visagista</title>
 <meta name="robots" content="noindex">
-<script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@100..125,400..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root { --bg:#ecebe7; --ink:#15151a; --muted:#6b6b72; --line:#d3d1ca; }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:400 16px/1.55 Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
-  a { color:inherit; }
-  .wrap { width:min(1240px, 100% - 40px); margin-inline:auto; }
-
-  .top { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 0; border-bottom:1px solid var(--line); }
-  .top__brand { font-weight:600; letter-spacing:.01em; }
-  .top__brand span { color:var(--muted); font-weight:400; }
-  .lang { display:flex; border:1px solid var(--ink); }
-  .lang button { all:unset; cursor:pointer; min-width:44px; min-height:40px; display:grid; place-items:center; font:500 12px/1 'IBM Plex Mono', monospace; letter-spacing:.08em; }
-  .lang button + button { border-left:1px solid var(--ink); }
-  .lang button.is-active { background:var(--ink); color:var(--bg); }
-  .lang button:focus-visible { outline:2px solid #2b59ff; outline-offset:2px; }
-
-  .intro { padding: clamp(40px, 8vw, 96px) 0 clamp(28px, 5vw, 56px); display:grid; gap:20px; }
-  .intro__kicker { font:500 12px/1 'IBM Plex Mono', monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-  .intro h1 { margin:0; font:600 clamp(34px, 6.2vw, 76px)/1.02 Archivo, Inter, sans-serif; letter-spacing:-.03em; max-width:14ch; text-wrap:balance; }
-  .intro p { margin:0; max-width:62ch; color:#3a3a42; font-size:clamp(16px, 1.5vw, 18px); }
-
-  .grid { display:grid; gap:24px; grid-template-columns:repeat(3, 1fr); padding-bottom:56px; }
-  @media (max-width: 980px) { .grid { grid-template-columns:1fr; max-width:560px; margin-inline:auto; } }
-
-  .card { display:flex; flex-direction:column; min-width:0; background:#f7f6f3; border:1px solid var(--line); }
-  .poster { position:relative; aspect-ratio:4/4.4; overflow:hidden; display:grid; container-type:inline-size; }
-  .poster > * { min-width:0; }
-  .card__body { padding:22px 22px 24px; display:grid; gap:14px; flex:1; align-content:start; }
-  .card__tag { font:500 11px/1 'IBM Plex Mono', monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-  .card__body h2 { margin:0; font:600 24px/1.15 Archivo, Inter, sans-serif; letter-spacing:-.015em; }
-  .card__body p { margin:0; color:#3a3a42; font-size:15px; }
-  .chips { display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0; list-style:none; }
-  .chips li { font:500 11px/1 'IBM Plex Mono', monospace; letter-spacing:.06em; text-transform:uppercase; padding:7px 9px; border:1px solid var(--line); }
-  .swatches { display:flex; gap:0; height:10px; }
-  .swatches i { flex:1; }
-  .links { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
-  .btn { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:48px; padding:0 14px; text-decoration:none; font-weight:600; font-size:14px; border:1px solid var(--ink); transition:background .2s, color .2s; }
-  .btn::after { content:'→'; transition:transform .2s; }
-  .btn:hover::after { transform:translateX(4px); }
-  .btn--solid { background:var(--ink); color:#fff; }
-  .btn--solid:hover { background:#000; }
-  .btn:not(.btn--solid):hover { background:var(--ink); color:#fff; }
-  .btn:focus-visible { outline:2px solid #2b59ff; outline-offset:2px; }
-
-  /* poster A — Atelier */
-  .pA { background:radial-gradient(120% 90% at 70% 10%, #2a2016 0%, #0b0907 60%); color:#efe6d6; place-items:center; text-align:center; }
-  .pA::before { content:''; position:absolute; inset:14px; border:1px solid rgba(200,164,92,.45); }
-  .pA__seal { width:54px; height:54px; border:1px solid #c8a45c; border-radius:50%; display:grid; place-items:center; font:400 20px/1 'Cormorant Garamond', serif; color:#e6cf9a; margin:0 auto 18px; letter-spacing:.04em; }
-  .pA__name { font:300 italic 23cqw/.95 'Cormorant Garamond', serif; color:#efe6d6; }
-  .pA__name b { font-weight:300; color:#c8a45c; }
-  .pA__sub { margin-top:18px; font:400 11px/1.4 Jost, sans-serif; letter-spacing:.34em; text-transform:uppercase; color:#c8a45c; }
-  .pA__rule { width:1px; height:44px; background:linear-gradient(#c8a45c, transparent); margin:18px auto 0; }
-
-  /* poster B — Blueprint */
-  .pB { background-color:#f1ede4; color:#14181f;
-        background-image:linear-gradient(rgba(35,64,142,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(35,64,142,.10) 1px, transparent 1px);
-        background-size:16px 16px; padding:22px; align-content:space-between; }
-  .pB__cap { display:flex; justify-content:space-between; font:500 10px/1 'IBM Plex Mono', monospace; letter-spacing:.12em; text-transform:uppercase; color:#23408e; }
-  .pB svg { width:62%; margin:0 auto; display:block; overflow:visible; }
-  .pB__name { font:700 14cqw/1 Archivo, sans-serif; font-stretch:115%; letter-spacing:-.03em; }
-  .pB__name mark { background:linear-gradient(transparent 58%, #f2d24b 58%); color:inherit; padding:0 .08em; }
-
-  /* poster C — Impacto */
-  .pC { background:#0a0a0a; color:#f5f3ee; align-content:space-between; }
-  .pC__stripes { height:16px; background:repeating-linear-gradient(-45deg, #e3231b 0 14px, #f5f3ee 14px 28px); }
-  .pC__big { font:400 37cqw/.82 Anton, Impact, sans-serif; text-transform:uppercase; letter-spacing:-.01em; white-space:nowrap; padding:0 5cqw; overflow:hidden; }
-  .pC__big span { display:block; }
-  .pC__big .o { color:transparent; -webkit-text-stroke:1.5px #f5f3ee; transform:translateX(-8%); }
-  .pC__red { background:#e3231b; padding:14px 18px; font:700 11px/1.3 Inter, sans-serif; letter-spacing:.12em; text-transform:uppercase; display:flex; justify-content:space-between; gap:12px; }
-
-  .note { border-top:1px solid var(--line); padding:26px 0 48px; display:grid; gap:10px; color:var(--muted); font-size:14px; max-width:78ch; }
-  .note strong { color:var(--ink); font-weight:600; }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <div class="top__brand">Walter Molina <span data-i18n="brandsub">· prototipos de sitio</span></div>
-    <div class="lang" role="group" aria-label="Idioma">
-      <button type="button" data-lang-btn="es">ES</button>
-      <button type="button" data-lang-btn="pt">PT</button>
-      <button type="button" data-lang-btn="en">EN</button>
-    </div>
-  </header>
-
-  <section class="intro">
-    <div class="intro__kicker" data-i18n="kicker">3 estilos · 6 páginas · ES / PT / EN</div>
-    <h1 data-i18n="h1">Tres direcciones para una misma idea.</h1>
-    <p data-i18n="lead">El contenido es el mismo; lo que cambia es la personalidad. Cada estilo tiene la página del <strong>curso</strong> (para barberos) y la de la <strong>consultoría online</strong> (para clientes). Recorrelas hasta el final —pasan cosas mientras scrolleás— y decime cuál te representa más.</p>
-  </section>
-
-  <main class="grid">
-    <article class="card">
-      <div class="poster pA" aria-hidden="true">
-        <div>
-          <div class="pA__seal">WM</div>
-          <div class="pA__name">Ate<b>lier</b></div>
-          <div class="pA__sub">Noir &amp; oro</div>
-          <div class="pA__rule"></div>
-        </div>
-      </div>
-      <div class="swatches" aria-hidden="true"><i style="background:#0b0907"></i><i style="background:#14100c"></i><i style="background:#c8a45c"></i><i style="background:#e6cf9a"></i><i style="background:#efe6d6"></i></div>
-      <div class="card__body">
-        <div class="card__tag" data-i18n="a_tag">Estilo A · editorial de lujo</div>
-        <h2 data-i18n="a_h">Atelier</h2>
-        <p data-i18n="a_p">Como una sastrería a medida. Negro cálido, oro champagne y tipografía serif. Lento, cinematográfico, exclusivo: la versión bien hecha del negro y dorado.</p>
-        <ul class="chips"><li data-i18n="a_c1">Lujo</li><li data-i18n="a_c2">Calma</li><li data-i18n="a_c3">Exclusividad</li></ul>
-        <div class="links">
-          <a class="btn btn--solid" href="atelier/curso.html" data-i18n="l_curso">Curso</a>
-          <a class="btn" href="atelier/consultoria.html" data-i18n="l_cons">Consultoría</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="poster pB" aria-hidden="true">
-        <div class="pB__cap"><span>FIG. 01</span><span>ESC. 1:1</span></div>
-        <svg viewBox="0 0 200 230" fill="none" stroke="#23408e" stroke-width="1.4" stroke-linecap="round">
-          <path d="M100 18c38 0 58 28 58 70 0 26-6 50-16 70-10 20-25 34-42 34s-32-14-42-34c-10-20-16-44-16-70 0-42 20-70 58-70z"/>
-          <path d="M42 96c-7-2-12 4-11 13 1 10 6 18 13 19M158 96c7-2 12 4 11 13-1 10-6 18-13 19" />
-          <path d="M70 100h20M110 100h20M100 104v30M88 160h24" />
-          <g stroke-dasharray="3 4" stroke-width="1"><path d="M18 62h164M18 124h164M18 186h164M100 4v222"/></g>
-          <g stroke-width="1"><path d="M190 62v62M186 62h8M186 124h8M190 124v62M186 186h8"/></g>
-          <g fill="#23408e" stroke="none" font-family="IBM Plex Mono, monospace" font-size="9"><text x="196" y="96">1/3</text><text x="196" y="158">1/3</text></g>
-        </svg>
-        <div class="pB__name">Blue<mark>print</mark></div>
-      </div>
-      <div class="swatches" aria-hidden="true"><i style="background:#f1ede4"></i><i style="background:#e6e0d3"></i><i style="background:#f2d24b"></i><i style="background:#23408e"></i><i style="background:#14181f"></i></div>
-      <div class="card__body">
-        <div class="card__tag" data-i18n="b_tag">Estilo B · técnico</div>
-        <h2 data-i18n="b_h">Blueprint</h2>
-        <p data-i18n="b_p">El método a la vista. Papel, tinta azul y planos del rostro que se dibujan mientras scrolleás. Preciso y confiable: el visagismo como ciencia, no como moda.</p>
-        <ul class="chips"><li data-i18n="b_c1">Método</li><li data-i18n="b_c2">Precisión</li><li data-i18n="b_c3">Confianza</li></ul>
-        <div class="links">
-          <a class="btn btn--solid" href="blueprint/curso.html" data-i18n="l_curso">Curso</a>
-          <a class="btn" href="blueprint/consultoria.html" data-i18n="l_cons">Consultoría</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="poster pC" aria-hidden="true">
-        <div class="pC__stripes"></div>
-        <div class="pC__big"><span>Impac</span><span class="o">Impacto</span></div>
-        <div class="pC__red"><span>Visagismo</span><span>Tijera · Barba</span></div>
-      </div>
-      <div class="swatches" aria-hidden="true"><i style="background:#0a0a0a"></i><i style="background:#8b8b8b"></i><i style="background:#e3231b"></i><i style="background:#f5f3ee"></i><i style="background:#ffffff"></i></div>
-      <div class="card__body">
-        <div class="card__tag" data-i18n="c_tag">Estilo C · bold</div>
-        <h2 data-i18n="c_h">Impacto</h2>
-        <p data-i18n="c_p">Un cartel de masterclass. Tipografía gigante, blanco y negro con rojo navaja, todo en movimiento. Directo y moderno: autoridad con energía.</p>
-        <ul class="chips"><li data-i18n="c_c1">Autoridad</li><li data-i18n="c_c2">Energía</li><li data-i18n="c_c3">Actualidad</li></ul>
-        <div class="links">
-          <a class="btn btn--solid" href="impacto/curso.html" data-i18n="l_curso">Curso</a>
-          <a class="btn" href="impacto/consultoria.html" data-i18n="l_cons">Consultoría</a>
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <footer class="note">
-    <div data-i18n="note1"><strong>Son prototipos.</strong> El programa del curso, los testimonios y parte de los textos son una base de ejemplo para ajustar con tu contenido real. Las fotos y videos salen de tu Instagram y de tu sitio actual.</div>
-    <div data-i18n="note2">Se puede mezclar: la estructura de un estilo con los colores o la tipografía de otro.</div>
-  </footer>
-</div>
-
 <script>
-window.I18N = {
-  pt: {
-    title: 'Walter Molina — Protótipos de site',
-    brandsub: '· protótipos de site',
-    kicker: '3 estilos · 6 páginas · ES / PT / EN',
-    h1: 'Três direções para a mesma ideia.',
-    lead: 'O conteúdo é o mesmo; o que muda é a personalidade. Cada estilo tem a página do <strong>curso</strong> (para barbeiros) e a da <strong>consultoria online</strong> (para clientes). Percorra até o fim — coisas acontecem enquanto você rola a página — e me diga qual te representa mais.',
-    a_tag: 'Estilo A · editorial de luxo', a_h: 'Atelier',
-    a_p: 'Como uma alfaiataria sob medida. Preto quente, ouro champagne e tipografia serifada. Lento, cinematográfico, exclusivo: a versão bem-feita do preto e dourado.',
-    a_c1: 'Luxo', a_c2: 'Calma', a_c3: 'Exclusividade',
-    b_tag: 'Estilo B · técnico', b_h: 'Blueprint',
-    b_p: 'O método à mostra. Papel, tinta azul e plantas do rosto que se desenham enquanto você rola. Preciso e confiável: o visagismo como ciência, não como moda.',
-    b_c1: 'Método', b_c2: 'Precisão', b_c3: 'Confiança',
-    c_tag: 'Estilo C · bold', c_h: 'Impacto',
-    c_p: 'Um cartaz de masterclass. Tipografia gigante, preto e branco com vermelho navalha, tudo em movimento. Direto e moderno: autoridade com energia.',
-    c_c1: 'Autoridade', c_c2: 'Energia', c_c3: 'Atualidade',
-    l_curso: 'Curso', l_cons: 'Consultoria',
-    note1: '<strong>São protótipos.</strong> O programa do curso, os depoimentos e parte dos textos são uma base de exemplo para ajustar com o seu conteúdo real. As fotos e vídeos vêm do seu Instagram e do seu site atual.',
-    note2: 'Dá para misturar: a estrutura de um estilo com as cores ou a tipografia de outro.'
-  },
-  en: {
-    title: 'Walter Molina — Website prototypes',
-    brandsub: '· website prototypes',
-    kicker: '3 styles · 6 pages · ES / PT / EN',
-    h1: 'Three directions for one idea.',
-    lead: 'The content is the same; the personality changes. Each style has the <strong>course</strong> page (for barbers) and the <strong>online consultation</strong> page (for clients). Scroll each one to the end — things happen as you scroll — and tell me which one feels most like you.',
-    a_tag: 'Style A · luxury editorial', a_h: 'Atelier',
-    a_p: 'Like a bespoke tailor. Warm black, champagne gold and serif type. Slow, cinematic, exclusive: black and gold done properly.',
-    a_c1: 'Luxury', a_c2: 'Calm', a_c3: 'Exclusivity',
-    b_tag: 'Style B · technical', b_h: 'Blueprint',
-    b_p: 'The method on display. Paper, blue ink and face blueprints that draw themselves as you scroll. Precise and trustworthy: visagism as a science, not a trend.',
-    b_c1: 'Method', b_c2: 'Precision', b_c3: 'Trust',
-    c_tag: 'Style C · bold', c_h: 'Impacto',
-    c_p: 'A masterclass poster. Giant type, black and white with razor red, everything in motion. Direct and modern: authority with energy.',
-    c_c1: 'Authority', c_c2: 'Energy', c_c3: 'Now',
-    l_curso: 'Course', l_cons: 'Consultation',
-    note1: '<strong>These are prototypes.</strong> The course syllabus, testimonials and part of the copy are a sample base to adjust with your real content. Photos and videos come from your Instagram and your current site.',
-    note2: 'Mixing is possible: the structure of one style with the colours or type of another.'
-  }
-};
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var v = q.get('v');
+    if (['1', '2', '3'].indexOf(v) < 0) { try { v = localStorage.getItem('wm_v'); } catch (e) { v = null; } }
+    if (['1', '2', '3'].indexOf(v) < 0) v = '1';
+    q.delete('v');
+    var page = q.get('pagina') === 'consultoria' ? 'consultoria.html' : 'index.html';
+    q.delete('pagina');
+    var s = q.toString();
+    location.replace('v' + v + '/' + page + (s ? '?' + s : '') + location.hash);
+  })();
 </script>
-<script src="assets/js/site.js"></script>
+<meta http-equiv="refresh" content="1; url=v1/index.html">
+</head>
+<body style="background:#1c1410;color:#efe6d6;font:16px system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0">
+  <a href="v1/index.html" style="color:inherit">Walter Molina →</a>
 </body>
 </html>

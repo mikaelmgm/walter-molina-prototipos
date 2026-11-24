@@ -41,6 +41,9 @@
   function eff(k) {
     if (p[k]) return p[k];
     if (k === 'tema') return root.getAttribute('data-theme-default') || 'oscuro';
+    // cada página puede fijar su propio valor por defecto: <html data-testimonios-default="0">
+    var own = root.getAttribute('data-' + k + '-default');
+    if (OPTS[k].indexOf(own) > -1) return own;
     return DEF[k];
   }
   function apply() {

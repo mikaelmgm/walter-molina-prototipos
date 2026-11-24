@@ -180,6 +180,10 @@ em { font-style: italic; }
 .kicker::before { content: ""; order: 1; flex: none; width: 28px; height: 1px; background: currentColor; opacity: .7; }
 .kicker > span:last-child { order: 2; }
 .kicker__n { order: 0; font: 400 13px/1 var(--serif); letter-spacing: .04em; font-variant-numeric: lining-nums; }
+/* numeración automática de las secciones: si una se oculta (p. ej. testimonios), las demás se renumeran solas */
+main { counter-reset: wm-sec; }
+main .kicker__n { counter-increment: wm-sec; font-size: 0; }
+main .kicker__n::before { content: counter(wm-sec, decimal-leading-zero); font-size: 13px; }
 .kicker--plain::before { display: none; }
 
 .h1 {

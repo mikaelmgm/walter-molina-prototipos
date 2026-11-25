@@ -825,8 +825,8 @@ html.reduce-motion .guides { transition: none; }
 .face path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s var(--ease-io) .6s; }
 .doc.is-in .face path, .reduce-motion .face path { stroke-dashoffset: 0; }
 .face .g { transition-delay: 1.2s; }
-.refs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
-.refs img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.refs img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px; }
 .checks li { display: flex; align-items: center; gap: 8px; }
 .checks i { flex: none; position: relative; width: 11px; height: 11px; border: 1px solid #8a5428; }
